@@ -3,8 +3,8 @@
 
     From "Astronomical Algorithms", Chapter 7
 */
-
 #include <stdlib.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
@@ -25,8 +25,7 @@ struct Date date_from_jd(double jd);
 struct Date set_month_str(struct Date *date);
 int date_diff (struct Date first, struct Date second);
 short get_week_day(struct Date date);
-// TODO refactor to Bool...
-char is_leap_year(short year);
+bool is_leap_year(short year);
 short unsigned get_year_day(struct Date date);
 
 /**
@@ -98,7 +97,13 @@ struct Date date_from_jd(double jd) {
 
     return date;
 }
-
+/**
+* @fn
+* Sets the English name for the month in
+* a Date struct
+* @param The Date struct where the month string
+*        should be set
+*/
 struct Date set_month_str(struct Date *date) {
     char* test;
 
@@ -149,6 +154,8 @@ struct Date set_month_str(struct Date *date) {
 }
 /**
 * Returns the date difference in days
+* @param first The first Date (smaller)
+* @param second The second Date (larger)
 */
 int date_diff(struct Date first, struct Date second) {
    double jd_first = jd(first); 
@@ -158,6 +165,7 @@ int date_diff(struct Date first, struct Date second) {
 }
 /**
 * Returns the week day as a number
+* @param date The Date struct to find the week day from
 */
 short get_week_day(struct Date date) {
    // Day should be taken at Oh
@@ -169,12 +177,14 @@ short get_week_day(struct Date date) {
 /**
 * Checks whether a given year is
 * a leap year (Gregorian only!!)
+* @param year The year to check
 */
-char is_leap_year(short year) {
+bool is_leap_year(short year) {
     return (year % 4) == 0;
 }
 /**
 * Returns the day number in the given year
+ * @param date The Date struct to use
 */
 short unsigned get_year_day(struct Date date) {
     short k = is_leap_year(date.year) ? 1 : 2;
