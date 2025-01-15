@@ -1,0 +1,52 @@
+\doxysection{Location Struct Reference}
+\hypertarget{structLocation}{}\label{structLocation}\index{Location@{Location}}
+
+
+{\ttfamily \#include $<$earth.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structLatitude}{Latitude}} \mbox{\hyperlink{structLocation_a6af6251be1ded893374a2c7881a731a6}{lat}}
+\item 
+double \mbox{\hyperlink{structLocation_a3e9d85908df6dccca4c98a8accc0e8aa}{h}}
+\item 
+double \mbox{\hyperlink{structLocation_a178cc5be45366efa4918468594a92eaf}{r\+\_\+sin\+\_\+phi\+\_\+p}}
+\item 
+double \mbox{\hyperlink{structLocation_a8c33ed99a783d0cc4c9518c5b1710d84}{r\+\_\+cos\+\_\+phi\+\_\+p}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representation of a location on the \doxylink{structEarth}{Earth}\textquotesingle{}s surface 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structLocation_a3e9d85908df6dccca4c98a8accc0e8aa}\index{Location@{Location}!h@{h}}
+\index{h@{h}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily \label{structLocation_a3e9d85908df6dccca4c98a8accc0e8aa} 
+double Location\+::h}
+
+Observer\textquotesingle{}s height above sea level in m \Hypertarget{structLocation_a6af6251be1ded893374a2c7881a731a6}\index{Location@{Location}!lat@{lat}}
+\index{lat@{lat}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{lat}{lat}}
+{\footnotesize\ttfamily \label{structLocation_a6af6251be1ded893374a2c7881a731a6} 
+struct \mbox{\hyperlink{structLatitude}{Latitude}} Location\+::lat}
+
+The location\textquotesingle{}s geographical latitude \Hypertarget{structLocation_a8c33ed99a783d0cc4c9518c5b1710d84}\index{Location@{Location}!r\_cos\_phi\_p@{r\_cos\_phi\_p}}
+\index{r\_cos\_phi\_p@{r\_cos\_phi\_p}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{r\_cos\_phi\_p}{r\_cos\_phi\_p}}
+{\footnotesize\ttfamily \label{structLocation_a8c33ed99a783d0cc4c9518c5b1710d84} 
+double Location\+::r\+\_\+cos\+\_\+phi\+\_\+p}
+
+\doxylink{structEarth}{Earth}\textquotesingle{}s radius times cos(geocentric\+\_\+latitude) \Hypertarget{structLocation_a178cc5be45366efa4918468594a92eaf}\index{Location@{Location}!r\_sin\_phi\_p@{r\_sin\_phi\_p}}
+\index{r\_sin\_phi\_p@{r\_sin\_phi\_p}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{r\_sin\_phi\_p}{r\_sin\_phi\_p}}
+{\footnotesize\ttfamily \label{structLocation_a178cc5be45366efa4918468594a92eaf} 
+double Location\+::r\+\_\+sin\+\_\+phi\+\_\+p}
+
+\doxylink{structEarth}{Earth}\textquotesingle{}s radius times sin(geocentric\+\_\+latitude) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{earth_8h}{earth.\+h}}\end{DoxyCompactItemize}

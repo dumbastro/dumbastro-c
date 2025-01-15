@@ -1,0 +1,125 @@
+\doxysection{src/julianday.h File Reference}
+\hypertarget{julianday_8h}{}\label{julianday_8h}\index{src/julianday.h@{src/julianday.h}}
+
+
+Collection of algorithms related to the Julian Day.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structDate}{Date}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}} (struct \mbox{\hyperlink{structDate}{Date}} date)
+\item 
+struct \mbox{\hyperlink{structDate}{Date}} \mbox{\hyperlink{julianday_8h_a438ad7cf25dce921bd620da973a3dc71}{date\+\_\+from\+\_\+jd}} (double \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}})
+\item 
+struct \mbox{\hyperlink{structDate}{Date}} \mbox{\hyperlink{julianday_8h_ad1ea764620d2c7a1ceb9d1a1df4003ff}{set\+\_\+month\+\_\+str}} (struct \mbox{\hyperlink{structDate}{Date}} \texorpdfstring{$\ast$}{*}date)
+\item 
+int \mbox{\hyperlink{julianday_8h_a21b17dd4d86182a79d1587b9bd1dec1d}{date\+\_\+diff}} (struct \mbox{\hyperlink{structDate}{Date}} first, struct \mbox{\hyperlink{structDate}{Date}} second)
+\item 
+short \mbox{\hyperlink{julianday_8h_abcd0f2eb8a0f614544800ce665f0cb55}{get\+\_\+week\+\_\+day}} (struct \mbox{\hyperlink{structDate}{Date}} date)
+\item 
+bool \mbox{\hyperlink{julianday_8h_a64265bfa50ceff75a485444abd2cbadf}{is\+\_\+leap\+\_\+year}} (short year)
+\item 
+short unsigned \mbox{\hyperlink{julianday_8h_a58b03a44bb614bf94110dfbdc2cfb2f8}{get\+\_\+year\+\_\+day}} (struct \mbox{\hyperlink{structDate}{Date}} date)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Collection of algorithms related to the Julian Day. 
+
+From "{}\+Astronomical Algorithms"{}, Chapter 7 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{julianday_8h_a21b17dd4d86182a79d1587b9bd1dec1d}\index{julianday.h@{julianday.h}!date\_diff@{date\_diff}}
+\index{date\_diff@{date\_diff}!julianday.h@{julianday.h}}
+\doxysubsubsection{\texorpdfstring{date\_diff()}{date\_diff()}}
+{\footnotesize\ttfamily \label{julianday_8h_a21b17dd4d86182a79d1587b9bd1dec1d} 
+int date\+\_\+diff (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDate}{Date}}}]{first}{, }\item[{struct \mbox{\hyperlink{structDate}{Date}}}]{second}{}\end{DoxyParamCaption})}
+
+Returns the date difference in days 
+\begin{DoxyParams}{Parameters}
+{\em first} & The first \doxylink{structDate}{Date} (smaller) \\
+\hline
+{\em second} & The second \doxylink{structDate}{Date} (larger) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{julianday_8h_a438ad7cf25dce921bd620da973a3dc71}\index{julianday.h@{julianday.h}!date\_from\_jd@{date\_from\_jd}}
+\index{date\_from\_jd@{date\_from\_jd}!julianday.h@{julianday.h}}
+\doxysubsubsection{\texorpdfstring{date\_from\_jd()}{date\_from\_jd()}}
+{\footnotesize\ttfamily \label{julianday_8h_a438ad7cf25dce921bd620da973a3dc71} 
+struct \mbox{\hyperlink{structDate}{Date}} date\+\_\+from\+\_\+jd (\begin{DoxyParamCaption}\item[{double}]{jd}{}\end{DoxyParamCaption})}
+
+Calculates calendar date from Julian Day ~\newline
+ {\itshape {\bfseries{NOTE}}}\+: not valid for negative JD values 
+\begin{DoxyParams}{Parameters}
+{\em jd} & The Julian Day to be converted to \doxylink{structDate}{Date} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{julianday_8h_abcd0f2eb8a0f614544800ce665f0cb55}\index{julianday.h@{julianday.h}!get\_week\_day@{get\_week\_day}}
+\index{get\_week\_day@{get\_week\_day}!julianday.h@{julianday.h}}
+\doxysubsubsection{\texorpdfstring{get\_week\_day()}{get\_week\_day()}}
+{\footnotesize\ttfamily \label{julianday_8h_abcd0f2eb8a0f614544800ce665f0cb55} 
+short get\+\_\+week\+\_\+day (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDate}{Date}}}]{date}{}\end{DoxyParamCaption})}
+
+Returns the week day as a number 
+\begin{DoxyParams}{Parameters}
+{\em date} & The \doxylink{structDate}{Date} struct to find the week day from \\
+\hline
+\end{DoxyParams}
+\Hypertarget{julianday_8h_a58b03a44bb614bf94110dfbdc2cfb2f8}\index{julianday.h@{julianday.h}!get\_year\_day@{get\_year\_day}}
+\index{get\_year\_day@{get\_year\_day}!julianday.h@{julianday.h}}
+\doxysubsubsection{\texorpdfstring{get\_year\_day()}{get\_year\_day()}}
+{\footnotesize\ttfamily \label{julianday_8h_a58b03a44bb614bf94110dfbdc2cfb2f8} 
+short unsigned get\+\_\+year\+\_\+day (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDate}{Date}}}]{date}{}\end{DoxyParamCaption})}
+
+Returns the day number in the given year 
+\begin{DoxyParams}{Parameters}
+{\em date} & The \doxylink{structDate}{Date} struct to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{julianday_8h_a64265bfa50ceff75a485444abd2cbadf}\index{julianday.h@{julianday.h}!is\_leap\_year@{is\_leap\_year}}
+\index{is\_leap\_year@{is\_leap\_year}!julianday.h@{julianday.h}}
+\doxysubsubsection{\texorpdfstring{is\_leap\_year()}{is\_leap\_year()}}
+{\footnotesize\ttfamily \label{julianday_8h_a64265bfa50ceff75a485444abd2cbadf} 
+bool is\+\_\+leap\+\_\+year (\begin{DoxyParamCaption}\item[{short}]{year}{}\end{DoxyParamCaption})}
+
+Checks whether a given year is a leap year (Gregorian only!!) 
+\begin{DoxyParams}{Parameters}
+{\em year} & The year to check \\
+\hline
+\end{DoxyParams}
+\Hypertarget{julianday_8h_a6584a6000b90e3494f97e00270337c59}\index{julianday.h@{julianday.h}!jd@{jd}}
+\index{jd@{jd}!julianday.h@{julianday.h}}
+\doxysubsubsection{\texorpdfstring{jd()}{jd()}}
+{\footnotesize\ttfamily \label{julianday_8h_a6584a6000b90e3494f97e00270337c59} 
+double jd (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDate}{Date}}}]{date}{}\end{DoxyParamCaption})}
+
+Calculates Julian Day from calendar date 
+\begin{DoxyParams}{Parameters}
+{\em date} & The \doxylink{structDate}{Date} struct to convert to JD \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Julian Day 
+\end{DoxyReturn}
+\Hypertarget{julianday_8h_ad1ea764620d2c7a1ceb9d1a1df4003ff}\index{julianday.h@{julianday.h}!set\_month\_str@{set\_month\_str}}
+\index{set\_month\_str@{set\_month\_str}!julianday.h@{julianday.h}}
+\doxysubsubsection{\texorpdfstring{set\_month\_str()}{set\_month\_str()}}
+{\footnotesize\ttfamily \label{julianday_8h_ad1ea764620d2c7a1ceb9d1a1df4003ff} 
+struct \mbox{\hyperlink{structDate}{Date}} set\+\_\+month\+\_\+str (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDate}{Date}} \texorpdfstring{$\ast$}{*}}]{date}{}\end{DoxyParamCaption})}
+
+Sets the English name for the month in a \doxylink{structDate}{Date} struct 
+\begin{DoxyParams}{Parameters}
+{\em The} & \doxylink{structDate}{Date} struct where the month string should be set \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,157 @@
+\doxysection{julianday.\+h}
+\hypertarget{julianday_8h_source}{}\label{julianday_8h_source}\index{src/julianday.h@{src/julianday.h}}
+\mbox{\hyperlink{julianday_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDate}{Date}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}};\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}};\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structDate_a4676477a25a6d1e63d9798b902a9b183}{day}};\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structDate_a303f466a20da89a4888d71ff89ee9b63}{monthstr}}[10];\ }
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structDate}{Date}}\ date);}
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDate}{Date}}\ \mbox{\hyperlink{julianday_8h_a438ad7cf25dce921bd620da973a3dc71}{date\_from\_jd}}(double\ \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}});}
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDate}{Date}}\ \mbox{\hyperlink{julianday_8h_ad1ea764620d2c7a1ceb9d1a1df4003ff}{set\_month\_str}}(struct\ \mbox{\hyperlink{structDate}{Date}}\ *date);}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{julianday_8h_a21b17dd4d86182a79d1587b9bd1dec1d}{date\_diff}}\ (\textcolor{keyword}{struct}\ \mbox{\hyperlink{structDate}{Date}}\ first,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structDate}{Date}}\ second);}
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{julianday_8h_abcd0f2eb8a0f614544800ce665f0cb55}{get\_week\_day}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structDate}{Date}}\ date);}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{julianday_8h_a64265bfa50ceff75a485444abd2cbadf}{is\_leap\_year}}(\textcolor{keywordtype}{short}\ \mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}});}
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{julianday_8h_a58b03a44bb614bf94110dfbdc2cfb2f8}{get\_year\_day}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structDate}{Date}}\ date);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structDate}{Date}}\ date)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ =\ date.\mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ =\ date.\mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structDate_a4676477a25a6d1e63d9798b902a9b183}{day}}\ =\ date.\mbox{\hyperlink{structDate_a4676477a25a6d1e63d9798b902a9b183}{day}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ ==\ 1\ ||\ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ ==\ 2)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ =\ \mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ -\/\ 1;}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ =\ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ +\ 12;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ a\ =\ trunc(\mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ /\ 100.0);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ b\ =\ 2\ -\/\ a\ +\ trunc(a\ /\ 4.0);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Should\ compare\ the\ date\ to}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Gregorian\ reform...}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{short}\ is\_jul\_date\ =\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ <\ 1582\ ||}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ ==\ 1582\ \&\&\ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ <\ 10)\ ||}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ ==\ 1582\ \&\&\ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ ==\ 10\ \&\&\ \mbox{\hyperlink{structDate_a4676477a25a6d1e63d9798b902a9b183}{day}}\ <\ 15);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_jul\_date)\ \{\ b\ =\ 0;\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}}\ =\ trunc(365.2500\ *\ (\mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ +\ 4716));}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}}\ +=\ trunc(30.6001\ *\ (\mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ +\ 1))\ +\ \mbox{\hyperlink{structDate_a4676477a25a6d1e63d9798b902a9b183}{day}}\ +\ b\ -\/\ 1524.5000;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}};}
+\DoxyCodeLine{00064\ \}}
+\DoxyCodeLine{00071\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDate}{Date}}\ \mbox{\hyperlink{julianday_8h_a438ad7cf25dce921bd620da973a3dc71}{date\_from\_jd}}(double\ \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}})\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ z\ =\ trunc(\mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}}\ +\ 0.5);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ f\ =\ \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}}\ +\ 0.5\ -\/\ z;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ a\ =\ 0,\ b\ =\ 0,\ c\ =\ 0,\ d\ =\ 0,\ e\ =\ 0;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (z\ <\ 2299161)\ a\ =\ z;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (z\ ==\ 2299161\ ||\ z\ >\ 2299161)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ alpha\ =\ trunc((z\ -\/\ 1867216.25)\ /\ 36524.25);}
+\DoxyCodeLine{00079\ \ \ \ \ a\ =\ z\ +\ 1\ +\ alpha\ -\/\ trunc(alpha\ /\ 4);}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ b\ =\ a\ +\ 1524;}
+\DoxyCodeLine{00083\ \ \ \ \ c\ =\ trunc((b\ -\/\ 122.1)\ /\ 365.25);}
+\DoxyCodeLine{00084\ \ \ \ \ d\ =\ trunc(365.25\ *\ c);}
+\DoxyCodeLine{00085\ \ \ \ \ e\ =\ trunc((b\ -\/\ d)\ /\ 30.6001);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structDate_a4676477a25a6d1e63d9798b902a9b183}{day}}\ =\ b\ -\/\ d\ -\/\ trunc(30.6001\ *\ e)\ +\ f;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}};\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}};}
+\DoxyCodeLine{00090\ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (e\ <\ 14)\ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ =\ e\ -\/\ 1;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (e\ ==\ 14\ ||\ e\ ==\ 15)\ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ =\ e\ -\/\ 13;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ >\ 2)\ \mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ =\ c\ -\/\ 4716;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ ==\ 1\ ||\ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ ==\ 2)\ \mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ =\ c\ -\/\ 4715;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDate}{Date}}\ date\ =\ \{.\mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ =\ \mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}},\ .month\ =\ \mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}},\ .day\ =\ \mbox{\hyperlink{structDate_a4676477a25a6d1e63d9798b902a9b183}{day}}\};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{return}\ date;}
+\DoxyCodeLine{00099\ \}}
+\DoxyCodeLine{00107\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDate}{Date}}\ \mbox{\hyperlink{julianday_8h_ad1ea764620d2c7a1ceb9d1a1df4003ff}{set\_month\_str}}(struct\ \mbox{\hyperlink{structDate}{Date}}\ *date)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{char}*\ test;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{switch}\ (date-\/>month)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1\ :}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}January"{}};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2\ :}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}February"{}};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3\ :}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}March"{}};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4\ :}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}April"{}};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5\ :}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}May"{}};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6\ :}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}June"{}};}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 7\ :}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}July"{}};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 8\ :}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}August"{}};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 9\ :}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}September"{}};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 10\ :}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}October"{}};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 11\ :}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}November"{}};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 12\ :}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ test\ =\ \textcolor{stringliteral}{"{}December"{}};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ c\ =\ 0;\ c\ <\ strlen(test);\ c++)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ date-\/>\mbox{\hyperlink{structDate_a303f466a20da89a4888d71ff89ee9b63}{monthstr}}[c]\ =\ test[c];}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{return}\ *date;}
+\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00160\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{julianday_8h_a21b17dd4d86182a79d1587b9bd1dec1d}{date\_diff}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structDate}{Date}}\ first,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structDate}{Date}}\ second)\ \{}
+\DoxyCodeLine{00161\ \ \ \ \textcolor{keywordtype}{double}\ jd\_first\ =\ \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}}(first);\ }
+\DoxyCodeLine{00162\ \ \ \ \textcolor{keywordtype}{double}\ jd\_second\ =\ \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}}(second);\ }
+\DoxyCodeLine{00163\ \ \ \ \ }
+\DoxyCodeLine{00164\ \ \ \ \textcolor{keywordflow}{return}\ ceil(jd\_second\ -\/\ jd\_first);}
+\DoxyCodeLine{00165\ \}}
+\DoxyCodeLine{00170\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{julianday_8h_abcd0f2eb8a0f614544800ce665f0cb55}{get\_week\_day}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structDate}{Date}}\ date)\ \{}
+\DoxyCodeLine{00171\ \ \ \ \textcolor{comment}{//\ Day\ should\ be\ taken\ at\ Oh}}
+\DoxyCodeLine{00172\ \ \ \ \textcolor{comment}{//date.day\ =\ trunc(date.day)\ +\ 0.0;}}
+\DoxyCodeLine{00173\ \ \ \ \textcolor{keywordtype}{double}\ altered\_jd\ =\ \mbox{\hyperlink{julianday_8h_a6584a6000b90e3494f97e00270337c59}{jd}}(date)\ +\ 1.5;\ }
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{int})altered\_jd\ \%\ 7;}
+\DoxyCodeLine{00176\ \}}
+\DoxyCodeLine{00182\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{julianday_8h_a64265bfa50ceff75a485444abd2cbadf}{is\_leap\_year}}(\textcolor{keywordtype}{short}\ \mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}})\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}}\ \%\ 4)\ ==\ 0;}
+\DoxyCodeLine{00184\ \}}
+\DoxyCodeLine{00189\ \textcolor{keywordtype}{short}\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{julianday_8h_a58b03a44bb614bf94110dfbdc2cfb2f8}{get\_year\_day}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structDate}{Date}}\ date)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{short}\ k\ =\ \mbox{\hyperlink{julianday_8h_a64265bfa50ceff75a485444abd2cbadf}{is\_leap\_year}}(date.\mbox{\hyperlink{structDate_a1a5c9ca2abd6f8cb79f28cd12126338f}{year}})\ ?\ 1\ :\ 2;}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{return}\ trunc((275\ *\ date.\mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}})\ /\ 9)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ -\/\ k\ *\ trunc((date.\mbox{\hyperlink{structDate_a7aea949895b5673dcc17ae0160944b1c}{month}}\ +\ 9)\ /\ 12)}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ +\ trunc(date.\mbox{\hyperlink{structDate_a4676477a25a6d1e63d9798b902a9b183}{day}})\ -\/\ 30;}
+\DoxyCodeLine{00195\ \}}
+\DoxyCodeLine{00196\ }
+
+\end{DoxyCode}

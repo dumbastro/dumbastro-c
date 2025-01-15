@@ -1,0 +1,138 @@
+\doxysection{src/earth.h File Reference}
+\hypertarget{earth_8h}{}\label{earth_8h}\index{src/earth.h@{src/earth.h}}
+
+
+Functions related to \doxylink{structEarth}{Earth}\textquotesingle{}s properties.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structEarth}{Earth}}
+\item 
+struct \mbox{\hyperlink{structLatitude}{Latitude}}
+\item 
+struct \mbox{\hyperlink{structLocation}{Location}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{earth_8h_acb827a0a334f36fa3f6390c351a2c19f}{set\+\_\+earth\+\_\+values}} (struct \mbox{\hyperlink{structEarth}{Earth}} \texorpdfstring{$\ast$}{*}earth)
+\item 
+double \mbox{\hyperlink{earth_8h_a35ab1255e12aebcce5c1d47330fed685}{lat\+\_\+to\+\_\+dec}} (struct \mbox{\hyperlink{structLatitude}{Latitude}} lat)
+\item 
+\Hypertarget{earth_8h_a6809040d886a70d0a3b15b382c1b3621}\label{earth_8h_a6809040d886a70d0a3b15b382c1b3621} 
+double {\bfseries r\+\_\+sin\+\_\+phi} (double h, double decimal\+\_\+lat)
+\item 
+\Hypertarget{earth_8h_a8305eb3abbcbb1576b0a384cb0ed1777}\label{earth_8h_a8305eb3abbcbb1576b0a384cb0ed1777} 
+struct \mbox{\hyperlink{structLatitude}{Latitude}} {\bfseries dec\+\_\+to\+\_\+lat} (double dec\+\_\+lat)
+\item 
+struct \mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{earth_8h_aa5ae7c465fcbd1f0e983d41be231c75d}{set\+\_\+location\+\_\+params}} (struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc)
+\item 
+double \mbox{\hyperlink{earth_8h_a70fe7812c7172d45168d8f3bb8a84a67}{rho\+\_\+sin\+\_\+phi}} (double h, double decimal\+\_\+lat)
+\item 
+double \mbox{\hyperlink{earth_8h_a02fd807c0725fa720ce87727d0e477a3}{rho\+\_\+cos\+\_\+phi}} (double h, double decimal\+\_\+lat)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{earth_8h_a952eac791b596a61bba0a133a3bb439f}\label{earth_8h_a952eac791b596a61bba0a133a3bb439f} 
+const double {\bfseries PI} = 3.\+14159265365358979323
+\item 
+const double \mbox{\hyperlink{earth_8h_afee78fd4b66ed8f7169a5055f751abc0}{EQ\+\_\+\+RADIUS}} = 6378.\+14
+\item 
+\Hypertarget{earth_8h_a7f89c8d5d36df36e7092bbbf1468c59b}\label{earth_8h_a7f89c8d5d36df36e7092bbbf1468c59b} 
+const double {\bfseries FLATTENING} = 1.\+0 / 298.\+257
+\item 
+\Hypertarget{earth_8h_a6b87c9ed22b868521e2c2cec8fb2adb8}\label{earth_8h_a6b87c9ed22b868521e2c2cec8fb2adb8} 
+const double {\bfseries POL\+\_\+\+RADIUS} = 6356.\+755
+\item 
+\Hypertarget{earth_8h_a7ba2678df95c7d8ab208d37320b0740a}\label{earth_8h_a7ba2678df95c7d8ab208d37320b0740a} 
+const double {\bfseries RAD\+\_\+\+RATIO} = 1 -\/ FLATTENING
+\item 
+\Hypertarget{earth_8h_aecc59bc25a075223391a10bdd5131513}\label{earth_8h_aecc59bc25a075223391a10bdd5131513} 
+const double {\bfseries MERID\+\_\+\+ECC} = 0.\+08181922
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions related to \doxylink{structEarth}{Earth}\textquotesingle{}s properties. 
+
+From "{}\+Astronomical Algorithms"{}, Chapter 10 {\itshape The \doxylink{structEarth}{Earth}\textquotesingle{}s Globe} 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{earth_8h_a35ab1255e12aebcce5c1d47330fed685}\index{earth.h@{earth.h}!lat\_to\_dec@{lat\_to\_dec}}
+\index{lat\_to\_dec@{lat\_to\_dec}!earth.h@{earth.h}}
+\doxysubsubsection{\texorpdfstring{lat\_to\_dec()}{lat\_to\_dec()}}
+{\footnotesize\ttfamily \label{earth_8h_a35ab1255e12aebcce5c1d47330fed685} 
+double lat\+\_\+to\+\_\+dec (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structLatitude}{Latitude}}}]{lat}{}\end{DoxyParamCaption})}
+
+Convert \doxylink{structLatitude}{Latitude} to decimal degrees 
+\begin{DoxyParams}{Parameters}
+{\em lat} & The \doxylink{structLatitude}{Latitude} struct (sessagesimal) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted \doxylink{structLatitude}{Latitude} number 
+\end{DoxyReturn}
+\Hypertarget{earth_8h_a02fd807c0725fa720ce87727d0e477a3}\index{earth.h@{earth.h}!rho\_cos\_phi@{rho\_cos\_phi}}
+\index{rho\_cos\_phi@{rho\_cos\_phi}!earth.h@{earth.h}}
+\doxysubsubsection{\texorpdfstring{rho\_cos\_phi()}{rho\_cos\_phi()}}
+{\footnotesize\ttfamily \label{earth_8h_a02fd807c0725fa720ce87727d0e477a3} 
+double rho\+\_\+cos\+\_\+phi (\begin{DoxyParamCaption}\item[{double}]{h}{, }\item[{double}]{decimal\+\_\+lat}{}\end{DoxyParamCaption})}
+
+Calculates \$\textbackslash{}rho \textbackslash{}sin\{\textbackslash{}phi\}\$ for a location 
+\begin{DoxyParams}{Parameters}
+{\em h} & The location\textquotesingle{}s height in meters \\
+\hline
+{\em decimal\+\_\+lat} & The location\textquotesingle{}s decimal latitude in degrees \\
+\hline
+\end{DoxyParams}
+\Hypertarget{earth_8h_a70fe7812c7172d45168d8f3bb8a84a67}\index{earth.h@{earth.h}!rho\_sin\_phi@{rho\_sin\_phi}}
+\index{rho\_sin\_phi@{rho\_sin\_phi}!earth.h@{earth.h}}
+\doxysubsubsection{\texorpdfstring{rho\_sin\_phi()}{rho\_sin\_phi()}}
+{\footnotesize\ttfamily \label{earth_8h_a70fe7812c7172d45168d8f3bb8a84a67} 
+double rho\+\_\+sin\+\_\+phi (\begin{DoxyParamCaption}\item[{double}]{h}{, }\item[{double}]{decimal\+\_\+lat}{}\end{DoxyParamCaption})}
+
+Calculates \$\textbackslash{}rho \textbackslash{}sin\{\textbackslash{}phi\}\$ for a location 
+\begin{DoxyParams}{Parameters}
+{\em h} & The location\textquotesingle{}s height in meters \\
+\hline
+{\em decimal\+\_\+lat} & The location\textquotesingle{}s decimal latitude in degrees \\
+\hline
+\end{DoxyParams}
+\Hypertarget{earth_8h_acb827a0a334f36fa3f6390c351a2c19f}\index{earth.h@{earth.h}!set\_earth\_values@{set\_earth\_values}}
+\index{set\_earth\_values@{set\_earth\_values}!earth.h@{earth.h}}
+\doxysubsubsection{\texorpdfstring{set\_earth\_values()}{set\_earth\_values()}}
+{\footnotesize\ttfamily \label{earth_8h_acb827a0a334f36fa3f6390c351a2c19f} 
+void set\+\_\+earth\+\_\+values (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structEarth}{Earth}} \texorpdfstring{$\ast$}{*}}]{earth}{}\end{DoxyParamCaption})}
+
+Initializes an \doxylink{structEarth}{Earth} structure \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]Even more useless?? \end{DoxyRefDesc}
+\Hypertarget{earth_8h_aa5ae7c465fcbd1f0e983d41be231c75d}\index{earth.h@{earth.h}!set\_location\_params@{set\_location\_params}}
+\index{set\_location\_params@{set\_location\_params}!earth.h@{earth.h}}
+\doxysubsubsection{\texorpdfstring{set\_location\_params()}{set\_location\_params()}}
+{\footnotesize\ttfamily \label{earth_8h_aa5ae7c465fcbd1f0e983d41be231c75d} 
+struct \mbox{\hyperlink{structLocation}{Location}} set\+\_\+location\+\_\+params (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc}{}\end{DoxyParamCaption})}
+
+Calculates and sets geographical parameters related to a location 
+\begin{DoxyParams}{Parameters}
+{\em loc} & The \doxylink{structLocation}{Location} to set \\
+\hline
+{\em lat} & The location\textquotesingle{}s \doxylink{structLatitude}{Latitude} \\
+\hline
+{\em h} & The location\textquotesingle{}s height in meters \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{earth_8h_afee78fd4b66ed8f7169a5055f751abc0}\index{earth.h@{earth.h}!EQ\_RADIUS@{EQ\_RADIUS}}
+\index{EQ\_RADIUS@{EQ\_RADIUS}!earth.h@{earth.h}}
+\doxysubsubsection{\texorpdfstring{EQ\_RADIUS}{EQ\_RADIUS}}
+{\footnotesize\ttfamily \label{earth_8h_afee78fd4b66ed8f7169a5055f751abc0} 
+const double EQ\+\_\+\+RADIUS = 6378.\+14}
+
+\doxylink{structEarth}{Earth} constants... 

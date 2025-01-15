@@ -1,0 +1,80 @@
+\doxysection{earth.\+h}
+\hypertarget{earth_8h_source}{}\label{earth_8h_source}\index{src/earth.h@{src/earth.h}}
+\mbox{\hyperlink{earth_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ PI\ =\ 3.14159265365358979323;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{earth_8h_afee78fd4b66ed8f7169a5055f751abc0}{EQ\_RADIUS}}\ =\ 6378.14;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ FLATTENING\ =\ 1.0\ /\ 298.257;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ POL\_RADIUS\ =\ 6356.755;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ RAD\_RATIO\ =\ 1\ -\/\ FLATTENING;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ MERID\_ECC\ =\ 0.08181922;}
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structEarth}{Earth}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structEarth_acc42e2066ff364bff38dc0eaad67eb88}{a}};\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structEarth_ad1244b143cdde5f54b25180132921af6}{f}};\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structEarth_acda9a6181cae37d2fb88cbaa321ce8b5}{b}};\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structEarth_aef076c5cf130e9bf21097fad5816f98e}{e}};\ }
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLatitude}{Latitude}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structLatitude_a3dc67d3674c109e918707d934dbcca94}{degrees}};\ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structLatitude_a9deb32cf90ed8e77d2d8e611abcbb020}{arcmins}};\ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structLatitude_a233218140a9cf0e12844b387ce23de1a}{arcsecs}};\ }
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00045\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLocation}{Location}}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLatitude}{Latitude}}\ \mbox{\hyperlink{structLocation_a6af6251be1ded893374a2c7881a731a6}{lat}};\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structLocation_a3e9d85908df6dccca4c98a8accc0e8aa}{h}};\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structLocation_a178cc5be45366efa4918468594a92eaf}{r\_sin\_phi\_p}};\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structLocation_a8c33ed99a783d0cc4c9518c5b1710d84}{r\_cos\_phi\_p}};\ }
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{earth_8h_acb827a0a334f36fa3f6390c351a2c19f}{set\_earth\_values}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structEarth}{Earth}}\ *\ earth);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{earth_8h_a35ab1255e12aebcce5c1d47330fed685}{lat\_to\_dec}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structLatitude}{Latitude}}\ lat);}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{double}\ r\_sin\_phi(\textcolor{keywordtype}{double}\ h,\ \textcolor{keywordtype}{double}\ decimal\_lat);}
+\DoxyCodeLine{00055\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLatitude}{Latitude}}\ dec\_to\_lat(double\ dec\_lat);}
+\DoxyCodeLine{00056\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLocation}{Location}}\ \mbox{\hyperlink{earth_8h_aa5ae7c465fcbd1f0e983d41be231c75d}{set\_location\_params}}(struct\ \mbox{\hyperlink{structLocation}{Location}}\ *\ loc);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{earth_8h_acb827a0a334f36fa3f6390c351a2c19f}{set\_earth\_values}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structEarth}{Earth}}\ *\ earth)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ earth-\/>\mbox{\hyperlink{structEarth_acc42e2066ff364bff38dc0eaad67eb88}{a}}\ =\ \mbox{\hyperlink{earth_8h_afee78fd4b66ed8f7169a5055f751abc0}{EQ\_RADIUS}};\ }
+\DoxyCodeLine{00065\ \ \ \ \ earth-\/>\mbox{\hyperlink{structEarth_ad1244b143cdde5f54b25180132921af6}{f}}\ =\ FLATTENING;\ }
+\DoxyCodeLine{00066\ \ \ \ \ earth-\/>\mbox{\hyperlink{structEarth_acda9a6181cae37d2fb88cbaa321ce8b5}{b}}\ =\ POL\_RADIUS;\ }
+\DoxyCodeLine{00067\ \ \ \ \ earth-\/>\mbox{\hyperlink{structEarth_aef076c5cf130e9bf21097fad5816f98e}{e}}\ =\ MERID\_ECC;}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{earth_8h_a35ab1255e12aebcce5c1d47330fed685}{lat\_to\_dec}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{structLatitude}{Latitude}}\ \mbox{\hyperlink{structLocation_a6af6251be1ded893374a2c7881a731a6}{lat}})\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{double}\ dec\_minutes\ =\ (double)\mbox{\hyperlink{structLocation_a6af6251be1ded893374a2c7881a731a6}{lat}}.\mbox{\hyperlink{structLatitude_a9deb32cf90ed8e77d2d8e611abcbb020}{arcmins}}\ /\ 60.0;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{double}\ dec\_seconds\ =\ \mbox{\hyperlink{structLocation_a6af6251be1ded893374a2c7881a731a6}{lat}}.\mbox{\hyperlink{structLatitude_a233218140a9cf0e12844b387ce23de1a}{arcsecs}}\ /\ 3600;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structLocation_a6af6251be1ded893374a2c7881a731a6}{lat}}.\mbox{\hyperlink{structLatitude_a3dc67d3674c109e918707d934dbcca94}{degrees}}\ +\ dec\_minutes\ +\ dec\_seconds;}
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{earth_8h_a70fe7812c7172d45168d8f3bb8a84a67}{rho\_sin\_phi}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{structLocation_a3e9d85908df6dccca4c98a8accc0e8aa}{h}},\ \textcolor{keywordtype}{double}\ decimal\_lat)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Convert\ lat\ from\ deg\ to\ radians}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{double}\ lat\_rad\ =\ decimal\_lat\ *\ (PI\ /\ 180.);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{double}\ tan\_u\ =\ RAD\_RATIO\ *\ tan(lat\_rad);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{double}\ u\ =\ atan(tan\_u);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{earth_8h_a70fe7812c7172d45168d8f3bb8a84a67}{rho\_sin\_phi}}\ =\ RAD\_RATIO\ *\ sin(u)\ +\ (\mbox{\hyperlink{structLocation_a3e9d85908df6dccca4c98a8accc0e8aa}{h}}\ /\ 6378140.)\ *\ sin(lat\_rad);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{earth_8h_a70fe7812c7172d45168d8f3bb8a84a67}{rho\_sin\_phi}};}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{earth_8h_a02fd807c0725fa720ce87727d0e477a3}{rho\_cos\_phi}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{structLocation_a3e9d85908df6dccca4c98a8accc0e8aa}{h}},\ \textcolor{keywordtype}{double}\ decimal\_lat)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ Convert\ lat\ from\ deg\ to\ radians}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{double}\ lat\_rad\ =\ decimal\_lat\ *\ (PI\ /\ 180.);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{double}\ tan\_u\ =\ RAD\_RATIO\ *\ tan(lat\_rad);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{double}\ u\ =\ atan(tan\_u);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{earth_8h_a02fd807c0725fa720ce87727d0e477a3}{rho\_cos\_phi}}\ =\ cos(u)\ +\ (\mbox{\hyperlink{structLocation_a3e9d85908df6dccca4c98a8accc0e8aa}{h}}\ /\ 6378140)\ *\ cos(lat\_rad);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{earth_8h_a02fd807c0725fa720ce87727d0e477a3}{rho\_cos\_phi}};}
+\DoxyCodeLine{00113\ \}}
+\DoxyCodeLine{00122\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLocation}{Location}}\ \mbox{\hyperlink{earth_8h_aa5ae7c465fcbd1f0e983d41be231c75d}{set\_location\_params}}(struct\ \mbox{\hyperlink{structLocation}{Location}}\ *\ loc)\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{double}\ decimal\_lat\ =\ \mbox{\hyperlink{earth_8h_a35ab1255e12aebcce5c1d47330fed685}{lat\_to\_dec}}(loc-\/>lat);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ loc-\/>r\_sin\_phi\_p\ =\ \mbox{\hyperlink{earth_8h_a70fe7812c7172d45168d8f3bb8a84a67}{rho\_sin\_phi}}(loc-\/>h,\ decimal\_lat);}
+\DoxyCodeLine{00126\ \ \ \ \ loc-\/>r\_cos\_phi\_p\ =\ \mbox{\hyperlink{earth_8h_a02fd807c0725fa720ce87727d0e477a3}{rho\_cos\_phi}}(loc-\/>h,\ decimal\_lat);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{return}\ *loc;}
+\DoxyCodeLine{00129\ \}}
+\DoxyCodeLine{00130\ }
+
+\end{DoxyCode}
