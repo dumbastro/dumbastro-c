@@ -4,5 +4,5 @@ Yet another (partial, flawed...) C implementation of Jean Meeus's "Astronomical 
 
 ## TODO
 
-[ ] Restructure to compile it as a proper C library
-[ ] Add Makefile
+- [ ] Restructure to compile it as a proper C library
+- [ ] Add Makefile
