@@ -5,14 +5,14 @@
 Functions related to \doxylink{structEarth}{Earth}\textquotesingle{}s properties.  
 
 
-{\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$math.\+h$>$}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structEarth}{Earth}}
 \item 
 struct \mbox{\hyperlink{structLatitude}{Latitude}}
+\item 
+struct \mbox{\hyperlink{structLongitude}{Longitude}}
 \item 
 struct \mbox{\hyperlink{structLocation}{Location}}
 \end{DoxyCompactItemize}
@@ -23,17 +23,16 @@ void \mbox{\hyperlink{earth_8h_acb827a0a334f36fa3f6390c351a2c19f}{set\+\_\+earth
 \item 
 double \mbox{\hyperlink{earth_8h_a35ab1255e12aebcce5c1d47330fed685}{lat\+\_\+to\+\_\+dec}} (struct \mbox{\hyperlink{structLatitude}{Latitude}} lat)
 \item 
-\Hypertarget{earth_8h_a6809040d886a70d0a3b15b382c1b3621}\label{earth_8h_a6809040d886a70d0a3b15b382c1b3621} 
-double {\bfseries r\+\_\+sin\+\_\+phi} (double h, double decimal\+\_\+lat)
+double \mbox{\hyperlink{earth_8h_a70fe7812c7172d45168d8f3bb8a84a67}{rho\+\_\+sin\+\_\+phi}} (double h, double decimal\+\_\+lat)
+\item 
+double \mbox{\hyperlink{earth_8h_a02fd807c0725fa720ce87727d0e477a3}{rho\+\_\+cos\+\_\+phi}} (double h, double decimal\+\_\+lat)
 \item 
 \Hypertarget{earth_8h_a8305eb3abbcbb1576b0a384cb0ed1777}\label{earth_8h_a8305eb3abbcbb1576b0a384cb0ed1777} 
 struct \mbox{\hyperlink{structLatitude}{Latitude}} {\bfseries dec\+\_\+to\+\_\+lat} (double dec\+\_\+lat)
 \item 
 struct \mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{earth_8h_aa5ae7c465fcbd1f0e983d41be231c75d}{set\+\_\+location\+\_\+params}} (struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc)
 \item 
-double \mbox{\hyperlink{earth_8h_a70fe7812c7172d45168d8f3bb8a84a67}{rho\+\_\+sin\+\_\+phi}} (double h, double decimal\+\_\+lat)
-\item 
-double \mbox{\hyperlink{earth_8h_a02fd807c0725fa720ce87727d0e477a3}{rho\+\_\+cos\+\_\+phi}} (double h, double decimal\+\_\+lat)
+double \mbox{\hyperlink{earth_8h_a6280d486224b18ce771f144896e035e2}{distance}} (struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc1, struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc2)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -63,6 +62,19 @@ Functions related to \doxylink{structEarth}{Earth}\textquotesingle{}s properties
 From "{}\+Astronomical Algorithms"{}, Chapter 10 {\itshape The \doxylink{structEarth}{Earth}\textquotesingle{}s Globe} 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{earth_8h_a6280d486224b18ce771f144896e035e2}\index{earth.h@{earth.h}!distance@{distance}}
+\index{distance@{distance}!earth.h@{earth.h}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily \label{earth_8h_a6280d486224b18ce771f144896e035e2} 
+double distance (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc1}{, }\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc2}{}\end{DoxyParamCaption})}
+
+Calculates the linear distance between two points (Locations) on the \doxylink{structEarth}{Earth}\textquotesingle{}s surface (at sea level) 
+\begin{DoxyParams}{Parameters}
+{\em loc1} & First \doxylink{structLocation}{Location} \\
+\hline
+{\em loc2} & Second \doxylink{structLocation}{Location} \\
+\hline
+\end{DoxyParams}
 \Hypertarget{earth_8h_a35ab1255e12aebcce5c1d47330fed685}\index{earth.h@{earth.h}!lat\_to\_dec@{lat\_to\_dec}}
 \index{lat\_to\_dec@{lat\_to\_dec}!earth.h@{earth.h}}
 \doxysubsubsection{\texorpdfstring{lat\_to\_dec()}{lat\_to\_dec()}}
@@ -110,7 +122,7 @@ Calculates \$\textbackslash{}rho \textbackslash{}sin\{\textbackslash{}phi\}\$ fo
 void set\+\_\+earth\+\_\+values (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structEarth}{Earth}} \texorpdfstring{$\ast$}{*}}]{earth}{}\end{DoxyParamCaption})}
 
 Initializes an \doxylink{structEarth}{Earth} structure \begin{DoxyRefDesc}{Todo}
-\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]Even more useless?? \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Even more useless?? \end{DoxyRefDesc}
 \Hypertarget{earth_8h_aa5ae7c465fcbd1f0e983d41be231c75d}\index{earth.h@{earth.h}!set\_location\_params@{set\_location\_params}}
 \index{set\_location\_params@{set\_location\_params}!earth.h@{earth.h}}
 \doxysubsubsection{\texorpdfstring{set\_location\_params()}{set\_location\_params()}}

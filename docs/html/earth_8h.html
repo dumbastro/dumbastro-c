@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AstroDumb: src/earth.h File Reference</title>
+<title>Dumbastro C: src/earth.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">AstroDumb
+   <div id="projectname">Dumbastro C
    </div>
   </td>
  </tr>
@@ -98,9 +98,7 @@ $(function(){ initResizable(false); });
 
 <p>Functions related to <a class="el" href="structEarth.html">Earth</a>'s properties.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;math.h&gt;</code><br />
-</div>
+
 <p><a href="earth_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -108,6 +106,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEarth.html">Earth</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLatitude.html">Latitude</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLongitude.html">Longitude</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLocation.html">Location</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,18 +118,17 @@ Functions</h2></td></tr>
 <tr class="separator:acb827a0a334f36fa3f6390c351a2c19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35ab1255e12aebcce5c1d47330fed685" id="r_a35ab1255e12aebcce5c1d47330fed685"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35ab1255e12aebcce5c1d47330fed685">lat_to_dec</a> (struct <a class="el" href="structLatitude.html">Latitude</a> lat)</td></tr>
 <tr class="separator:a35ab1255e12aebcce5c1d47330fed685"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6809040d886a70d0a3b15b382c1b3621" id="r_a6809040d886a70d0a3b15b382c1b3621"><td class="memItemLeft" align="right" valign="top"><a id="a6809040d886a70d0a3b15b382c1b3621" name="a6809040d886a70d0a3b15b382c1b3621"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>r_sin_phi</b> (double h, double decimal_lat)</td></tr>
-<tr class="separator:a6809040d886a70d0a3b15b382c1b3621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70fe7812c7172d45168d8f3bb8a84a67" id="r_a70fe7812c7172d45168d8f3bb8a84a67"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70fe7812c7172d45168d8f3bb8a84a67">rho_sin_phi</a> (double h, double decimal_lat)</td></tr>
+<tr class="separator:a70fe7812c7172d45168d8f3bb8a84a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fd807c0725fa720ce87727d0e477a3" id="r_a02fd807c0725fa720ce87727d0e477a3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02fd807c0725fa720ce87727d0e477a3">rho_cos_phi</a> (double h, double decimal_lat)</td></tr>
+<tr class="separator:a02fd807c0725fa720ce87727d0e477a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8305eb3abbcbb1576b0a384cb0ed1777" id="r_a8305eb3abbcbb1576b0a384cb0ed1777"><td class="memItemLeft" align="right" valign="top"><a id="a8305eb3abbcbb1576b0a384cb0ed1777" name="a8305eb3abbcbb1576b0a384cb0ed1777"></a>
 struct <a class="el" href="structLatitude.html">Latitude</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dec_to_lat</b> (double dec_lat)</td></tr>
 <tr class="separator:a8305eb3abbcbb1576b0a384cb0ed1777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5ae7c465fcbd1f0e983d41be231c75d" id="r_aa5ae7c465fcbd1f0e983d41be231c75d"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structLocation.html">Location</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5ae7c465fcbd1f0e983d41be231c75d">set_location_params</a> (struct <a class="el" href="structLocation.html">Location</a> *loc)</td></tr>
 <tr class="separator:aa5ae7c465fcbd1f0e983d41be231c75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70fe7812c7172d45168d8f3bb8a84a67" id="r_a70fe7812c7172d45168d8f3bb8a84a67"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70fe7812c7172d45168d8f3bb8a84a67">rho_sin_phi</a> (double h, double decimal_lat)</td></tr>
-<tr class="separator:a70fe7812c7172d45168d8f3bb8a84a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02fd807c0725fa720ce87727d0e477a3" id="r_a02fd807c0725fa720ce87727d0e477a3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02fd807c0725fa720ce87727d0e477a3">rho_cos_phi</a> (double h, double decimal_lat)</td></tr>
-<tr class="separator:a02fd807c0725fa720ce87727d0e477a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6280d486224b18ce771f144896e035e2" id="r_a6280d486224b18ce771f144896e035e2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6280d486224b18ce771f144896e035e2">distance</a> (struct <a class="el" href="structLocation.html">Location</a> *loc1, struct <a class="el" href="structLocation.html">Location</a> *loc2)</td></tr>
+<tr class="separator:a6280d486224b18ce771f144896e035e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -155,6 +154,34 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>MERID_ECC</b>
 <div class="textblock"><p>Functions related to <a class="el" href="structEarth.html">Earth</a>'s properties. </p>
 <p>From "Astronomical Algorithms", Chapter 10 <em>The <a class="el" href="structEarth.html">Earth</a>'s Globe</em> </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a6280d486224b18ce771f144896e035e2" name="a6280d486224b18ce771f144896e035e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6280d486224b18ce771f144896e035e2">&#9670;&#160;</a></span>distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double distance </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structLocation.html">Location</a> *</td>          <td class="paramname"><span class="paramname"><em>loc1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structLocation.html">Location</a> *</td>          <td class="paramname"><span class="paramname"><em>loc2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculates the linear distance between two points (Locations) on the <a class="el" href="structEarth.html">Earth</a>'s surface (at sea level) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loc1</td><td>First <a class="el" href="structLocation.html">Location</a> </td></tr>
+    <tr><td class="paramname">loc2</td><td>Second <a class="el" href="structLocation.html">Location</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a35ab1255e12aebcce5c1d47330fed685" name="a35ab1255e12aebcce5c1d47330fed685"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35ab1255e12aebcce5c1d47330fed685">&#9670;&#160;</a></span>lat_to_dec()</h2>
 
@@ -249,7 +276,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>MERID_ECC</b>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initializes an <a class="el" href="structEarth.html">Earth</a> structure </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo</a></b></dt><dd>Even more useless?? </dd></dl>
+<p>Initializes an <a class="el" href="structEarth.html">Earth</a> structure </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>Even more useless?? </dd></dl>
 
 </div>
 </div>
