@@ -91,7 +91,7 @@ struct Location set_location_params(struct Location * loc) {
 }
 /**
 * @fn
-* Calculates the linear distance between two points
+* Calculates the approximate linear distance between two points
 * (Locations) on the Earth's surface (at sea level)
 * @param loc1 First Location
 * @param loc2 Second Location
@@ -107,4 +107,41 @@ double distance(struct Location *loc1, struct Location *loc2) {
     double d = acos(cos_d) * (180. / PI);
 
     return (6371. * PI * d) / 180.;
+}
+/**
+* @fn
+* Calculates the linear distance between two points
+* on the Earth's surface with better accuracy
+* @param loc1 First Location
+* @param loc2 Second Location
+*/
+double better_distance(struct Location *loc1, struct Location *loc2) {
+    double lat1 = lat_to_dec(loc1->lat);
+    double lat2 = lat_to_dec(loc2->lat);
+    double lon1 = lon_to_dec(loc1->lon);
+    double lon2 = lon_to_dec(loc2->lon);
+
+    double F = (lat1 + lat2) / 2.;
+    double G = (lat1 - lat2) / 2.;
+    double lambda = (lon1 - lon2) / 2.;
+    G *= PI / 180.;
+    F *= PI / 180.;
+    lambda *= PI / 180.;
+    double S = sin(G)*sin(G)*(cos(lambda)*cos(lambda)) + \
+        + cos(F)*cos(F)*(sin(lambda)*sin(lambda));
+    double C = cos(G)*cos(G)*(cos(lambda)*cos(lambda)) + \
+        + sin(F)*sin(F)*(sin(lambda)*sin(lambda));
+
+    double tan_w = sqrt(S/C);
+    // Here, w (atan) is in radians (see Ch. 10, pag. 81)
+    double w = atan(tan_w);
+    double R = sqrt(S*C) / w; 
+    double D = 2 * w * EQ_RADIUS;
+    double H1 = (3*R - 1) / 2*C;
+    double H2 = (3*R + 1) / 2*S;
+
+    double dist = D*(1 + FLATTENING*H1*(sin(F)*sin(F))*(cos(G)*cos(G)) - \
+        - FLATTENING*H2*(cos(F)*cos(F))*(sin(G)*sin(G)));
+
+    return dist;
 }

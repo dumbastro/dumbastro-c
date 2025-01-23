@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jd_0',['jd',['../julianday_8h.html#a6584a6000b90e3494f97e00270337c59',1,'julianday.c']]]
+  ['is_5fleap_5fyear_0',['is_leap_year',['../julianday_8h.html#a64265bfa50ceff75a485444abd2cbadf',1,'julianday.c']]]
 ];

@@ -129,6 +129,8 @@ struct <a class="el" href="structLatitude.html">Latitude</a>&#160;</td><td class
 <tr class="separator:aa5ae7c465fcbd1f0e983d41be231c75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6280d486224b18ce771f144896e035e2" id="r_a6280d486224b18ce771f144896e035e2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6280d486224b18ce771f144896e035e2">distance</a> (struct <a class="el" href="structLocation.html">Location</a> *loc1, struct <a class="el" href="structLocation.html">Location</a> *loc2)</td></tr>
 <tr class="separator:a6280d486224b18ce771f144896e035e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49e7e50d74a44980678c669f093e898" id="r_ab49e7e50d74a44980678c669f093e898"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab49e7e50d74a44980678c669f093e898">better_distance</a> (struct <a class="el" href="structLocation.html">Location</a> *loc1, struct <a class="el" href="structLocation.html">Location</a> *loc2)</td></tr>
+<tr class="separator:ab49e7e50d74a44980678c669f093e898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -154,6 +156,34 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>MERID_ECC</b>
 <div class="textblock"><p>Functions related to <a class="el" href="structEarth.html">Earth</a>'s properties. </p>
 <p>From "Astronomical Algorithms", Chapter 10 <em>The <a class="el" href="structEarth.html">Earth</a>'s Globe</em> </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="ab49e7e50d74a44980678c669f093e898" name="ab49e7e50d74a44980678c669f093e898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab49e7e50d74a44980678c669f093e898">&#9670;&#160;</a></span>better_distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double better_distance </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structLocation.html">Location</a> *</td>          <td class="paramname"><span class="paramname"><em>loc1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structLocation.html">Location</a> *</td>          <td class="paramname"><span class="paramname"><em>loc2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculates the linear distance between two points on the <a class="el" href="structEarth.html">Earth</a>'s surface with better accuracy </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loc1</td><td>First <a class="el" href="structLocation.html">Location</a> </td></tr>
+    <tr><td class="paramname">loc2</td><td>Second <a class="el" href="structLocation.html">Location</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6280d486224b18ce771f144896e035e2" name="a6280d486224b18ce771f144896e035e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6280d486224b18ce771f144896e035e2">&#9670;&#160;</a></span>distance()</h2>
 
@@ -172,7 +202,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>MERID_ECC</b>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Calculates the linear distance between two points (Locations) on the <a class="el" href="structEarth.html">Earth</a>'s surface (at sea level) </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Calculates the approximate linear distance between two points (Locations) on the <a class="el" href="structEarth.html">Earth</a>'s surface (at sea level) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">loc1</td><td>First <a class="el" href="structLocation.html">Location</a> </td></tr>
     <tr><td class="paramname">loc2</td><td>Second <a class="el" href="structLocation.html">Location</a> </td></tr>

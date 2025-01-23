@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lat_5fto_5fdec_0',['lat_to_dec',['../earth_8h.html#a35ab1255e12aebcce5c1d47330fed685',1,'earth.c']]]
+  ['jd_0',['jd',['../julianday_8h.html#a6584a6000b90e3494f97e00270337c59',1,'julianday.c']]]
 ];

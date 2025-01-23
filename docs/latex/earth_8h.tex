@@ -33,6 +33,8 @@ struct \mbox{\hyperlink{structLatitude}{Latitude}} {\bfseries dec\+\_\+to\+\_\+l
 struct \mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{earth_8h_aa5ae7c465fcbd1f0e983d41be231c75d}{set\+\_\+location\+\_\+params}} (struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc)
 \item 
 double \mbox{\hyperlink{earth_8h_a6280d486224b18ce771f144896e035e2}{distance}} (struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc1, struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc2)
+\item 
+double \mbox{\hyperlink{earth_8h_ab49e7e50d74a44980678c669f093e898}{better\+\_\+distance}} (struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc1, struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc2)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -62,13 +64,26 @@ Functions related to \doxylink{structEarth}{Earth}\textquotesingle{}s properties
 From "{}\+Astronomical Algorithms"{}, Chapter 10 {\itshape The \doxylink{structEarth}{Earth}\textquotesingle{}s Globe} 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{earth_8h_ab49e7e50d74a44980678c669f093e898}\index{earth.h@{earth.h}!better\_distance@{better\_distance}}
+\index{better\_distance@{better\_distance}!earth.h@{earth.h}}
+\doxysubsubsection{\texorpdfstring{better\_distance()}{better\_distance()}}
+{\footnotesize\ttfamily \label{earth_8h_ab49e7e50d74a44980678c669f093e898} 
+double better\+\_\+distance (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc1}{, }\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc2}{}\end{DoxyParamCaption})}
+
+Calculates the linear distance between two points on the \doxylink{structEarth}{Earth}\textquotesingle{}s surface with better accuracy 
+\begin{DoxyParams}{Parameters}
+{\em loc1} & First \doxylink{structLocation}{Location} \\
+\hline
+{\em loc2} & Second \doxylink{structLocation}{Location} \\
+\hline
+\end{DoxyParams}
 \Hypertarget{earth_8h_a6280d486224b18ce771f144896e035e2}\index{earth.h@{earth.h}!distance@{distance}}
 \index{distance@{distance}!earth.h@{earth.h}}
 \doxysubsubsection{\texorpdfstring{distance()}{distance()}}
 {\footnotesize\ttfamily \label{earth_8h_a6280d486224b18ce771f144896e035e2} 
 double distance (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc1}{, }\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc2}{}\end{DoxyParamCaption})}
 
-Calculates the linear distance between two points (Locations) on the \doxylink{structEarth}{Earth}\textquotesingle{}s surface (at sea level) 
+Calculates the approximate linear distance between two points (Locations) on the \doxylink{structEarth}{Earth}\textquotesingle{}s surface (at sea level) 
 \begin{DoxyParams}{Parameters}
 {\em loc1} & First \doxylink{structLocation}{Location} \\
 \hline

@@ -64,4 +64,5 @@ double rho_cos_phi(double h, double decimal_lat);
 struct Latitude dec_to_lat(double dec_lat);
 struct Location set_location_params(struct Location * loc);
 double distance(struct Location *loc1, struct Location *loc2);
+double better_distance(struct Location *loc1, struct Location *loc2);
 
