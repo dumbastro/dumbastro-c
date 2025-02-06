@@ -1,9 +1,25 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include <math.h>
 #include <string.h>
-#include "julianday.h"
+#include "dumbastro.h"
 
+/**
+* Month names
+*/
+const static char* MONTH_NAMES[13] = {
+	[0] = "Invalid",
+	[1] = "January",
+	[2] = "February",
+	[3] = "March",
+	[4] = "April",
+	[5] = "May",
+	[6] = "June",
+	[7] = "July",
+	[8] = "August",
+	[9] = "September",
+	[10] = "October",
+	[11] = "November",
+	[12] = "December",
+};
 /**
  * @fn
  * Calculates Julian Day from calendar date
@@ -51,8 +67,8 @@ struct Date date_from_jd(double jd) {
 
     if (z < 2299161) a = z;
     if (z == 2299161 || z > 2299161) {
-	int alpha = trunc((z - 1867216.25) / 36524.25);
-	a = z + 1 + alpha - trunc(alpha / 4);
+		int alpha = trunc((z - 1867216.25) / 36524.25);
+		a = z + 1 + alpha - trunc(alpha / 4.);
     }
 
     b = a + 1524;
@@ -81,49 +97,8 @@ struct Date date_from_jd(double jd) {
 *        should be set
 */
 struct Date set_month_str(struct Date *date) {
-    char* test;
-
-    switch (date->month) {
-        case 1 :
-            test = "January";
-            break;
-        case 2 :
-            test = "February";
-            break;
-        case 3 :
-            test = "March";
-            break;
-        case 4 :
-            test = "April";
-            break;
-        case 5 :
-            test = "May";
-            break;
-        case 6 :
-            test = "June";
-            break;
-        case 7 :
-            test = "July";
-            break;
-        case 8 :
-            test = "August";
-            break;
-        case 9 :
-            test = "September";
-            break;
-        case 10 :
-            test = "October";
-            break;
-        case 11 :
-            test = "November";
-            break;
-        case 12 :
-            test = "December";
-            break;
-    }
-
-    for (int c = 0; c < strlen(test); c++) {
-        date->monthstr[c] = test[c];
+    for (int c = 0; c < strlen(MONTH_NAMES[date->month]); c++) {
+        date->monthstr[c] = MONTH_NAMES[date->month][c];
     }
 
     return *date;
@@ -165,8 +140,8 @@ bool is_leap_year(short year) {
 short unsigned get_year_day(struct Date date) {
     short k = is_leap_year(date.year) ? 1 : 2;
 
-    return trunc((275 * date.month) / 9)
-        - k * trunc((date.month + 9) / 12)
+    return trunc((275 * date.month) / 9.)
+        - k * trunc((date.month + 9) / 12.)
         + trunc(date.day) - 30;
 }
 

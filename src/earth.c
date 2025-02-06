@@ -1,5 +1,11 @@
 #include <math.h>
-#include "earth.h"
+#include "dumbastro.h"
+
+/** @file earth.c
+    @brief Functions related to Earth's properties
+
+    From "Astronomical Algorithms", Chapter 10 _The Earth's Globe_
+*/
 
 /**
 * @fn
@@ -49,7 +55,7 @@ double lon_to_dec(struct Longitude lon) {
 */
 double rho_sin_phi(double h, double decimal_lat) {
     // Convert lat from deg to radians
-    double lat_rad = decimal_lat * (PI / 180.);
+    double lat_rad = decimal_lat * RAD;
     double tan_u = RAD_RATIO * tan(lat_rad);
     double u = atan(tan_u);
     double rho_sin_phi = RAD_RATIO * sin(u) + (h / 6378140.) * sin(lat_rad);
@@ -65,7 +71,7 @@ double rho_sin_phi(double h, double decimal_lat) {
 */
 double rho_cos_phi(double h, double decimal_lat) {
     // Convert lat from deg to radians
-    double lat_rad = decimal_lat * (PI / 180.);
+    double lat_rad = decimal_lat * RAD;
     double tan_u = RAD_RATIO * tan(lat_rad);
     double u = atan(tan_u);
 
@@ -97,16 +103,16 @@ struct Location set_location_params(struct Location * loc) {
 * @param loc2 Second Location
 */
 double distance(struct Location *loc1, struct Location *loc2) {
-    double lat1 = lat_to_dec(loc1->lat) * (PI / 180.);
-    double lat2 = lat_to_dec(loc2->lat) * (PI / 180.);
-    double lon1 = lon_to_dec(loc1->lon) * (PI / 180.);
-    double lon2 = lon_to_dec(loc2->lon) * (PI / 180.);
+    double lat1 = lat_to_dec(loc1->lat) * RAD;
+    double lat2 = lat_to_dec(loc2->lat) * RAD;
+    double lon1 = lon_to_dec(loc1->lon) * RAD;
+    double lon2 = lon_to_dec(loc2->lon) * RAD;
 
     double cos_d = sin(lat1)*sin(lat2) + (cos(lat1)*cos(lat2))*cos(lon1 - lon2);
 
-    double d = acos(cos_d) * (180. / PI);
+    double d = acos(cos_d) * DEG;
 
-    return (6371. * PI * d) / 180.;
+    return (6371. * M_PI * d) / 180.;
 }
 /**
 * @fn
@@ -124,9 +130,9 @@ double better_distance(struct Location *loc1, struct Location *loc2) {
     double F = (lat1 + lat2) / 2.;
     double G = (lat1 - lat2) / 2.;
     double lambda = (lon1 - lon2) / 2.;
-    G *= PI / 180.;
-    F *= PI / 180.;
-    lambda *= PI / 180.;
+    G *= RAD;
+    F *= RAD;
+    lambda *= RAD;
     double S = sin(G)*sin(G)*(cos(lambda)*cos(lambda)) + \
         + cos(F)*cos(F)*(sin(lambda)*sin(lambda));
     double C = cos(G)*cos(G)*(cos(lambda)*cos(lambda)) + \
