@@ -1,0 +1,97 @@
+\doxysection{src/coords.c File Reference}
+\hypertarget{coords_8c}{}\label{coords_8c}\index{src/coords.c@{src/coords.c}}
+
+
+Functions related to coordinate transformations.  
+
+
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include "{}dumbastro.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{coords_8c_af5c1b7c92f188c0cdbf2bb64a9ff2822}{ecl\+\_\+lon\+\_\+from\+\_\+eq}} (double alpha, double delta, Equinox eq)
+\item 
+double \mbox{\hyperlink{coords_8c_a1684fbc7592b16207f5a212a774b0e9f}{ecl\+\_\+lat\+\_\+from\+\_\+eq}} (double alpha, double delta, Equinox eq)
+\item 
+double \mbox{\hyperlink{coords_8c_a72acca54143211fa5dbfd3a8e13ac9ab}{alpha\+\_\+from\+\_\+ecl}} (double lat, double lon, Equinox eq)
+\item 
+double \mbox{\hyperlink{coords_8c_a3fb1cdb47138eac82829fb0b3626c4dc}{delta\+\_\+from\+\_\+ecl}} (double lat, double lon, Equinox eq)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{coords_8c_a7cc07d098d59629cca622b69c79ed1b4}{mean\+\_\+ecl\+\_\+obl}} \mbox{[}$\,$\mbox{]}
+\item 
+\Hypertarget{coords_8c_a0ebafde5bda8444d3c0ffccb7bad7579}\label{coords_8c_a0ebafde5bda8444d3c0ffccb7bad7579} 
+const short unsigned {\bfseries JCENTURY} = 36525
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions related to coordinate transformations. 
+
+From "{}\+Astronomical Algorithms"{}, Chapter 12 {\itshape Transformation of Coordinates} 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{coords_8c_a72acca54143211fa5dbfd3a8e13ac9ab}\index{coords.c@{coords.c}!alpha\_from\_ecl@{alpha\_from\_ecl}}
+\index{alpha\_from\_ecl@{alpha\_from\_ecl}!coords.c@{coords.c}}
+\doxysubsubsection{\texorpdfstring{alpha\_from\_ecl()}{alpha\_from\_ecl()}}
+{\footnotesize\ttfamily \label{coords_8c_a72acca54143211fa5dbfd3a8e13ac9ab} 
+double alpha\+\_\+from\+\_\+ecl (\begin{DoxyParamCaption}\item[{double}]{lat}{, }\item[{double}]{lon}{, }\item[{Equinox}]{eq}{}\end{DoxyParamCaption})}
+
+Calculate R.\+A. from ecliptical coords \Hypertarget{coords_8c_a3fb1cdb47138eac82829fb0b3626c4dc}\index{coords.c@{coords.c}!delta\_from\_ecl@{delta\_from\_ecl}}
+\index{delta\_from\_ecl@{delta\_from\_ecl}!coords.c@{coords.c}}
+\doxysubsubsection{\texorpdfstring{delta\_from\_ecl()}{delta\_from\_ecl()}}
+{\footnotesize\ttfamily \label{coords_8c_a3fb1cdb47138eac82829fb0b3626c4dc} 
+double delta\+\_\+from\+\_\+ecl (\begin{DoxyParamCaption}\item[{double}]{lat}{, }\item[{double}]{lon}{, }\item[{Equinox}]{eq}{}\end{DoxyParamCaption})}
+
+Calculate dec from ecliptical coords \Hypertarget{coords_8c_a1684fbc7592b16207f5a212a774b0e9f}\index{coords.c@{coords.c}!ecl\_lat\_from\_eq@{ecl\_lat\_from\_eq}}
+\index{ecl\_lat\_from\_eq@{ecl\_lat\_from\_eq}!coords.c@{coords.c}}
+\doxysubsubsection{\texorpdfstring{ecl\_lat\_from\_eq()}{ecl\_lat\_from\_eq()}}
+{\footnotesize\ttfamily \label{coords_8c_a1684fbc7592b16207f5a212a774b0e9f} 
+double ecl\+\_\+lat\+\_\+from\+\_\+eq (\begin{DoxyParamCaption}\item[{double}]{alpha}{, }\item[{double}]{delta}{, }\item[{Equinox}]{eq}{}\end{DoxyParamCaption})}
+
+Calculates ecliptical latitude from equatorial coordinates 
+\begin{DoxyParams}{Parameters}
+{\em alpha} & R.\+A. in decimal degrees \\
+\hline
+{\em delta} & DEC in decimal degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The ecliptical latitude in degrees 
+\end{DoxyReturn}
+\Hypertarget{coords_8c_af5c1b7c92f188c0cdbf2bb64a9ff2822}\index{coords.c@{coords.c}!ecl\_lon\_from\_eq@{ecl\_lon\_from\_eq}}
+\index{ecl\_lon\_from\_eq@{ecl\_lon\_from\_eq}!coords.c@{coords.c}}
+\doxysubsubsection{\texorpdfstring{ecl\_lon\_from\_eq()}{ecl\_lon\_from\_eq()}}
+{\footnotesize\ttfamily \label{coords_8c_af5c1b7c92f188c0cdbf2bb64a9ff2822} 
+double ecl\+\_\+lon\+\_\+from\+\_\+eq (\begin{DoxyParamCaption}\item[{double}]{alpha}{, }\item[{double}]{delta}{, }\item[{Equinox}]{eq}{}\end{DoxyParamCaption})}
+
+Calculates ecliptical longitude from equatorial coordinates 
+\begin{DoxyParams}{Parameters}
+{\em alpha} & R.\+A. in decimal degrees \\
+\hline
+{\em delta} & DEC in decimal degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The ecliptical longitude in degrees 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{coords_8c_a7cc07d098d59629cca622b69c79ed1b4}\index{coords.c@{coords.c}!mean\_ecl\_obl@{mean\_ecl\_obl}}
+\index{mean\_ecl\_obl@{mean\_ecl\_obl}!coords.c@{coords.c}}
+\doxysubsubsection{\texorpdfstring{mean\_ecl\_obl}{mean\_ecl\_obl}}
+{\footnotesize\ttfamily \label{coords_8c_a7cc07d098d59629cca622b69c79ed1b4} 
+const double mean\+\_\+ecl\+\_\+obl\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ [0]\ =\ 23.4392911,\ }
+\DoxyCodeLine{\ \ \ \ [2]\ =\ 23.4457889,\ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

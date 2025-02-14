@@ -239,5 +239,13 @@ int main(void) {
     printf("Mean sidereal Greenwich (degrees): %.8f\n", g_mean_ha(gw_date, false));
     printf("Mean sidereal Greenwich (hours): %.8f\n", g_mean_ha(gw_date, true));
 
+    printf("\n\n");
+    double ecl_lon = ecl_lon_from_eq(116.328942, 28.026183, J2000);
+    double ecl_lat = ecl_lat_from_eq(116.328942, 28.026183, J2000);
+    printf("Ecliptical lon. (Pollux): %.6f\n", ecl_lon);
+    printf("Ecliptical lat. (Pollux): %.6f\n", ecl_lat);
+    printf("R.A. from ecliptical (Pollux): %.6f\n", alpha_from_ecl(ecl_lat, ecl_lon, J2000));
+    printf("DEC from ecliptical (Pollux): %.6f\n", delta_from_ecl(ecl_lat, ecl_lon, J2000));
+    
     return EXIT_SUCCESS;
 }

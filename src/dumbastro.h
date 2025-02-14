@@ -5,6 +5,11 @@
 #include <math.h>
 #include <stdlib.h>
 
+typedef enum Equinox {
+    J2000,
+    JNOW,
+    B1950
+} Equinox;
 /**
 * Conversions
 */
@@ -93,5 +98,11 @@ double better_distance(struct Location *loc1, struct Location *loc2);
 // Time functions
 double g_mean_ha(struct Date date, bool in_hours);
 double g_app_ha(struct Date date);
+
+// Coordinate transformations
+double ecl_lon_from_eq(double alpha, double delta, Equinox eq);
+double ecl_lat_from_eq(double alpha, double delta, Equinox eq);
+double alpha_from_ecl(double lat, double lon, Equinox eq);
+double delta_from_ecl(double lat, double lon, Equinox eq);
 
 #endif /* DUMBASTRO_H */

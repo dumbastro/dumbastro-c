@@ -1,0 +1,276 @@
+\doxysection{src/dumbastro.h File Reference}
+\hypertarget{dumbastro_8h}{}\label{dumbastro_8h}\index{src/dumbastro.h@{src/dumbastro.h}}
+
+
+Functions related to \doxylink{structEarth}{Earth}\textquotesingle{}s properties.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structDate}{Date}}
+\item 
+struct \mbox{\hyperlink{structEarth}{Earth}}
+\item 
+struct \mbox{\hyperlink{structLatitude}{Latitude}}
+\item 
+struct \mbox{\hyperlink{structLongitude}{Longitude}}
+\item 
+struct \mbox{\hyperlink{structLocation}{Location}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{dumbastro_8h_a6584a6000b90e3494f97e00270337c59}{jd}} (struct \mbox{\hyperlink{structDate}{Date}} date)
+\item 
+struct \mbox{\hyperlink{structDate}{Date}} \mbox{\hyperlink{dumbastro_8h_a438ad7cf25dce921bd620da973a3dc71}{date\+\_\+from\+\_\+jd}} (double \mbox{\hyperlink{dumbastro_8h_a6584a6000b90e3494f97e00270337c59}{jd}})
+\item 
+struct \mbox{\hyperlink{structDate}{Date}} \mbox{\hyperlink{dumbastro_8h_ad1ea764620d2c7a1ceb9d1a1df4003ff}{set\+\_\+month\+\_\+str}} (struct \mbox{\hyperlink{structDate}{Date}} \texorpdfstring{$\ast$}{*}date)
+\item 
+int \mbox{\hyperlink{dumbastro_8h_a21b17dd4d86182a79d1587b9bd1dec1d}{date\+\_\+diff}} (struct \mbox{\hyperlink{structDate}{Date}} first, struct \mbox{\hyperlink{structDate}{Date}} second)
+\item 
+short \mbox{\hyperlink{dumbastro_8h_abcd0f2eb8a0f614544800ce665f0cb55}{get\+\_\+week\+\_\+day}} (struct \mbox{\hyperlink{structDate}{Date}} date)
+\item 
+bool \mbox{\hyperlink{dumbastro_8h_a64265bfa50ceff75a485444abd2cbadf}{is\+\_\+leap\+\_\+year}} (short year)
+\item 
+short unsigned \mbox{\hyperlink{dumbastro_8h_a58b03a44bb614bf94110dfbdc2cfb2f8}{get\+\_\+year\+\_\+day}} (struct \mbox{\hyperlink{structDate}{Date}} date)
+\item 
+void \mbox{\hyperlink{dumbastro_8h_acb827a0a334f36fa3f6390c351a2c19f}{set\+\_\+earth\+\_\+values}} (struct \mbox{\hyperlink{structEarth}{Earth}} \texorpdfstring{$\ast$}{*}earth)
+\item 
+double \mbox{\hyperlink{dumbastro_8h_a35ab1255e12aebcce5c1d47330fed685}{lat\+\_\+to\+\_\+dec}} (struct \mbox{\hyperlink{structLatitude}{Latitude}} lat)
+\item 
+double \mbox{\hyperlink{dumbastro_8h_a70fe7812c7172d45168d8f3bb8a84a67}{rho\+\_\+sin\+\_\+phi}} (double h, double decimal\+\_\+lat)
+\item 
+double \mbox{\hyperlink{dumbastro_8h_a02fd807c0725fa720ce87727d0e477a3}{rho\+\_\+cos\+\_\+phi}} (double h, double decimal\+\_\+lat)
+\item 
+\Hypertarget{dumbastro_8h_a8305eb3abbcbb1576b0a384cb0ed1777}\label{dumbastro_8h_a8305eb3abbcbb1576b0a384cb0ed1777} 
+struct \mbox{\hyperlink{structLatitude}{Latitude}} {\bfseries dec\+\_\+to\+\_\+lat} (double dec\+\_\+lat)
+\item 
+struct \mbox{\hyperlink{structLocation}{Location}} \mbox{\hyperlink{dumbastro_8h_aa5ae7c465fcbd1f0e983d41be231c75d}{set\+\_\+location\+\_\+params}} (struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc)
+\item 
+double \mbox{\hyperlink{dumbastro_8h_a6280d486224b18ce771f144896e035e2}{distance}} (struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc1, struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc2)
+\item 
+double \mbox{\hyperlink{dumbastro_8h_ab49e7e50d74a44980678c669f093e898}{better\+\_\+distance}} (struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc1, struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}loc2)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{dumbastro_8h_a576a50bb619d9b7350132d8ef0131fc9}{RAD}} = M\+\_\+\+PI / 180.
+\item 
+\Hypertarget{dumbastro_8h_aec79d91d52bd254e0645659ebed8b77e}\label{dumbastro_8h_aec79d91d52bd254e0645659ebed8b77e} 
+const double {\bfseries DEG} = 180. / M\+\_\+\+PI
+\item 
+const double \mbox{\hyperlink{dumbastro_8h_afee78fd4b66ed8f7169a5055f751abc0}{EQ\+\_\+\+RADIUS}} = 6378.\+14
+\item 
+\Hypertarget{dumbastro_8h_a7f89c8d5d36df36e7092bbbf1468c59b}\label{dumbastro_8h_a7f89c8d5d36df36e7092bbbf1468c59b} 
+const double {\bfseries FLATTENING} = 1.\+0 / 298.\+257
+\item 
+\Hypertarget{dumbastro_8h_a6b87c9ed22b868521e2c2cec8fb2adb8}\label{dumbastro_8h_a6b87c9ed22b868521e2c2cec8fb2adb8} 
+const double {\bfseries POL\+\_\+\+RADIUS} = 6356.\+755
+\item 
+\Hypertarget{dumbastro_8h_a7ba2678df95c7d8ab208d37320b0740a}\label{dumbastro_8h_a7ba2678df95c7d8ab208d37320b0740a} 
+const double {\bfseries RAD\+\_\+\+RATIO} = 1 -\/ FLATTENING
+\item 
+\Hypertarget{dumbastro_8h_aecc59bc25a075223391a10bdd5131513}\label{dumbastro_8h_aecc59bc25a075223391a10bdd5131513} 
+const double {\bfseries MERID\+\_\+\+ECC} = 0.\+08181922
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions related to \doxylink{structEarth}{Earth}\textquotesingle{}s properties. 
+
+From "{}\+Astronomical Algorithms"{}, Chapter 10 {\itshape The \doxylink{structEarth}{Earth}\textquotesingle{}s Globe} 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dumbastro_8h_ab49e7e50d74a44980678c669f093e898}\index{dumbastro.h@{dumbastro.h}!better\_distance@{better\_distance}}
+\index{better\_distance@{better\_distance}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{better\_distance()}{better\_distance()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_ab49e7e50d74a44980678c669f093e898} 
+double better\+\_\+distance (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc1}{, }\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc2}{}\end{DoxyParamCaption})}
+
+Calculates the linear distance between two points on the \doxylink{structEarth}{Earth}\textquotesingle{}s surface with better accuracy 
+\begin{DoxyParams}{Parameters}
+{\em loc1} & First \doxylink{structLocation}{Location} \\
+\hline
+{\em loc2} & Second \doxylink{structLocation}{Location} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dumbastro_8h_a21b17dd4d86182a79d1587b9bd1dec1d}\index{dumbastro.h@{dumbastro.h}!date\_diff@{date\_diff}}
+\index{date\_diff@{date\_diff}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{date\_diff()}{date\_diff()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_a21b17dd4d86182a79d1587b9bd1dec1d} 
+int date\+\_\+diff (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDate}{Date}}}]{first}{, }\item[{struct \mbox{\hyperlink{structDate}{Date}}}]{second}{}\end{DoxyParamCaption})}
+
+Returns the date difference in days 
+\begin{DoxyParams}{Parameters}
+{\em first} & The first \doxylink{structDate}{Date} (smaller) \\
+\hline
+{\em second} & The second \doxylink{structDate}{Date} (larger) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dumbastro_8h_a438ad7cf25dce921bd620da973a3dc71}\index{dumbastro.h@{dumbastro.h}!date\_from\_jd@{date\_from\_jd}}
+\index{date\_from\_jd@{date\_from\_jd}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{date\_from\_jd()}{date\_from\_jd()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_a438ad7cf25dce921bd620da973a3dc71} 
+struct \mbox{\hyperlink{structDate}{Date}} date\+\_\+from\+\_\+jd (\begin{DoxyParamCaption}\item[{double}]{jd}{}\end{DoxyParamCaption})}
+
+Calculates calendar date from Julian Day ~\newline
+ {\itshape {\bfseries{NOTE}}}\+: not valid for negative JD values 
+\begin{DoxyParams}{Parameters}
+{\em jd} & The Julian Day to be converted to \doxylink{structDate}{Date} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dumbastro_8h_a6280d486224b18ce771f144896e035e2}\index{dumbastro.h@{dumbastro.h}!distance@{distance}}
+\index{distance@{distance}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_a6280d486224b18ce771f144896e035e2} 
+double distance (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc1}{, }\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc2}{}\end{DoxyParamCaption})}
+
+Calculates the approximate linear distance between two points (Locations) on the \doxylink{structEarth}{Earth}\textquotesingle{}s surface (at sea level) 
+\begin{DoxyParams}{Parameters}
+{\em loc1} & First \doxylink{structLocation}{Location} \\
+\hline
+{\em loc2} & Second \doxylink{structLocation}{Location} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dumbastro_8h_abcd0f2eb8a0f614544800ce665f0cb55}\index{dumbastro.h@{dumbastro.h}!get\_week\_day@{get\_week\_day}}
+\index{get\_week\_day@{get\_week\_day}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{get\_week\_day()}{get\_week\_day()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_abcd0f2eb8a0f614544800ce665f0cb55} 
+short get\+\_\+week\+\_\+day (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDate}{Date}}}]{date}{}\end{DoxyParamCaption})}
+
+Returns the week day as a number 
+\begin{DoxyParams}{Parameters}
+{\em date} & The \doxylink{structDate}{Date} struct to find the week day from \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dumbastro_8h_a58b03a44bb614bf94110dfbdc2cfb2f8}\index{dumbastro.h@{dumbastro.h}!get\_year\_day@{get\_year\_day}}
+\index{get\_year\_day@{get\_year\_day}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{get\_year\_day()}{get\_year\_day()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_a58b03a44bb614bf94110dfbdc2cfb2f8} 
+short unsigned get\+\_\+year\+\_\+day (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDate}{Date}}}]{date}{}\end{DoxyParamCaption})}
+
+Returns the day number in the given year 
+\begin{DoxyParams}{Parameters}
+{\em date} & The \doxylink{structDate}{Date} struct to use \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dumbastro_8h_a64265bfa50ceff75a485444abd2cbadf}\index{dumbastro.h@{dumbastro.h}!is\_leap\_year@{is\_leap\_year}}
+\index{is\_leap\_year@{is\_leap\_year}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{is\_leap\_year()}{is\_leap\_year()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_a64265bfa50ceff75a485444abd2cbadf} 
+bool is\+\_\+leap\+\_\+year (\begin{DoxyParamCaption}\item[{short}]{year}{}\end{DoxyParamCaption})}
+
+Checks whether a given year is a leap year (Gregorian only!!) 
+\begin{DoxyParams}{Parameters}
+{\em year} & The year to check \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dumbastro_8h_a6584a6000b90e3494f97e00270337c59}\index{dumbastro.h@{dumbastro.h}!jd@{jd}}
+\index{jd@{jd}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{jd()}{jd()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_a6584a6000b90e3494f97e00270337c59} 
+double jd (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDate}{Date}}}]{date}{}\end{DoxyParamCaption})}
+
+Calculates Julian Day from calendar date 
+\begin{DoxyParams}{Parameters}
+{\em date} & The \doxylink{structDate}{Date} struct to convert to JD \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Julian Day 
+\end{DoxyReturn}
+\Hypertarget{dumbastro_8h_a35ab1255e12aebcce5c1d47330fed685}\index{dumbastro.h@{dumbastro.h}!lat\_to\_dec@{lat\_to\_dec}}
+\index{lat\_to\_dec@{lat\_to\_dec}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{lat\_to\_dec()}{lat\_to\_dec()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_a35ab1255e12aebcce5c1d47330fed685} 
+double lat\+\_\+to\+\_\+dec (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structLatitude}{Latitude}}}]{lat}{}\end{DoxyParamCaption})}
+
+Convert \doxylink{structLatitude}{Latitude} to decimal degrees 
+\begin{DoxyParams}{Parameters}
+{\em lat} & The \doxylink{structLatitude}{Latitude} struct (sessagesimal) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted \doxylink{structLatitude}{Latitude} number 
+\end{DoxyReturn}
+\Hypertarget{dumbastro_8h_a02fd807c0725fa720ce87727d0e477a3}\index{dumbastro.h@{dumbastro.h}!rho\_cos\_phi@{rho\_cos\_phi}}
+\index{rho\_cos\_phi@{rho\_cos\_phi}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{rho\_cos\_phi()}{rho\_cos\_phi()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_a02fd807c0725fa720ce87727d0e477a3} 
+double rho\+\_\+cos\+\_\+phi (\begin{DoxyParamCaption}\item[{double}]{h}{, }\item[{double}]{decimal\+\_\+lat}{}\end{DoxyParamCaption})}
+
+Calculates \$\textbackslash{}rho \textbackslash{}sin\{\textbackslash{}phi\}\$ for a location 
+\begin{DoxyParams}{Parameters}
+{\em h} & The location\textquotesingle{}s height in meters \\
+\hline
+{\em decimal\+\_\+lat} & The location\textquotesingle{}s decimal latitude in degrees \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dumbastro_8h_a70fe7812c7172d45168d8f3bb8a84a67}\index{dumbastro.h@{dumbastro.h}!rho\_sin\_phi@{rho\_sin\_phi}}
+\index{rho\_sin\_phi@{rho\_sin\_phi}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{rho\_sin\_phi()}{rho\_sin\_phi()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_a70fe7812c7172d45168d8f3bb8a84a67} 
+double rho\+\_\+sin\+\_\+phi (\begin{DoxyParamCaption}\item[{double}]{h}{, }\item[{double}]{decimal\+\_\+lat}{}\end{DoxyParamCaption})}
+
+Calculates \$\textbackslash{}rho \textbackslash{}sin\{\textbackslash{}phi\}\$ for a location 
+\begin{DoxyParams}{Parameters}
+{\em h} & The location\textquotesingle{}s height in meters \\
+\hline
+{\em decimal\+\_\+lat} & The location\textquotesingle{}s decimal latitude in degrees \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dumbastro_8h_acb827a0a334f36fa3f6390c351a2c19f}\index{dumbastro.h@{dumbastro.h}!set\_earth\_values@{set\_earth\_values}}
+\index{set\_earth\_values@{set\_earth\_values}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{set\_earth\_values()}{set\_earth\_values()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_acb827a0a334f36fa3f6390c351a2c19f} 
+void set\+\_\+earth\+\_\+values (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structEarth}{Earth}} \texorpdfstring{$\ast$}{*}}]{earth}{}\end{DoxyParamCaption})}
+
+Initializes an \doxylink{structEarth}{Earth} structure \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]Even more useless?? \end{DoxyRefDesc}
+\Hypertarget{dumbastro_8h_aa5ae7c465fcbd1f0e983d41be231c75d}\index{dumbastro.h@{dumbastro.h}!set\_location\_params@{set\_location\_params}}
+\index{set\_location\_params@{set\_location\_params}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{set\_location\_params()}{set\_location\_params()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_aa5ae7c465fcbd1f0e983d41be231c75d} 
+struct \mbox{\hyperlink{structLocation}{Location}} set\+\_\+location\+\_\+params (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structLocation}{Location}} \texorpdfstring{$\ast$}{*}}]{loc}{}\end{DoxyParamCaption})}
+
+Calculates and sets geographical parameters related to a location 
+\begin{DoxyParams}{Parameters}
+{\em loc} & The \doxylink{structLocation}{Location} to set \\
+\hline
+{\em lat} & The location\textquotesingle{}s \doxylink{structLatitude}{Latitude} \\
+\hline
+{\em h} & The location\textquotesingle{}s height in meters \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dumbastro_8h_ad1ea764620d2c7a1ceb9d1a1df4003ff}\index{dumbastro.h@{dumbastro.h}!set\_month\_str@{set\_month\_str}}
+\index{set\_month\_str@{set\_month\_str}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{set\_month\_str()}{set\_month\_str()}}
+{\footnotesize\ttfamily \label{dumbastro_8h_ad1ea764620d2c7a1ceb9d1a1df4003ff} 
+struct \mbox{\hyperlink{structDate}{Date}} set\+\_\+month\+\_\+str (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDate}{Date}} \texorpdfstring{$\ast$}{*}}]{date}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000004}{Todo}}]Replace with LUT Sets the English name for the month in a \doxylink{structDate}{Date} struct \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em The} & \doxylink{structDate}{Date} struct where the month string should be set \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{dumbastro_8h_afee78fd4b66ed8f7169a5055f751abc0}\index{dumbastro.h@{dumbastro.h}!EQ\_RADIUS@{EQ\_RADIUS}}
+\index{EQ\_RADIUS@{EQ\_RADIUS}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{EQ\_RADIUS}{EQ\_RADIUS}}
+{\footnotesize\ttfamily \label{dumbastro_8h_afee78fd4b66ed8f7169a5055f751abc0} 
+const double EQ\+\_\+\+RADIUS = 6378.\+14}
+
+\doxylink{structEarth}{Earth} constants \Hypertarget{dumbastro_8h_a576a50bb619d9b7350132d8ef0131fc9}\index{dumbastro.h@{dumbastro.h}!RAD@{RAD}}
+\index{RAD@{RAD}!dumbastro.h@{dumbastro.h}}
+\doxysubsubsection{\texorpdfstring{RAD}{RAD}}
+{\footnotesize\ttfamily \label{dumbastro_8h_a576a50bb619d9b7350132d8ef0131fc9} 
+const double RAD = M\+\_\+\+PI / 180.}
+
+Conversions 

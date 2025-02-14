@@ -1,0 +1,30 @@
+\doxysection{src/time.c File Reference}
+\hypertarget{time_8c}{}\label{time_8c}\index{src/time.c@{src/time.c}}
+
+
+Functions related to (astronomical) time.  
+
+
+{\ttfamily \#include "{}dumbastro.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{time_8c_a2061ea3c3bdc3459993194a9e9815303}{g\+\_\+mean\+\_\+ha}} (struct \mbox{\hyperlink{structDate}{Date}} date, bool in\+\_\+hours)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions related to (astronomical) time. 
+
+From "{}\+Astronomical Algorithms"{}, Chapter 11 {\itshape Sidereal Time at Greenwich} and Chapters ... 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{time_8c_a2061ea3c3bdc3459993194a9e9815303}\index{time.c@{time.c}!g\_mean\_ha@{g\_mean\_ha}}
+\index{g\_mean\_ha@{g\_mean\_ha}!time.c@{time.c}}
+\doxysubsubsection{\texorpdfstring{g\_mean\_ha()}{g\_mean\_ha()}}
+{\footnotesize\ttfamily \label{time_8c_a2061ea3c3bdc3459993194a9e9815303} 
+double g\+\_\+mean\+\_\+ha (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structDate}{Date}}}]{date}{, }\item[{bool}]{in\+\_\+hours}{}\end{DoxyParamCaption})}
+
+Calculates the mean hour angle (sidereal time) at Greenwich using formula (11.\+4) \begin{DoxyReturn}{Returns}
+The hour angle in degrees 
+\end{DoxyReturn}

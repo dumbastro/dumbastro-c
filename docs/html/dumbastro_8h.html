@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dumbastro C: src/earth.h File Reference</title>
+<title>Dumbastro C: src/dumbastro.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,17 +92,21 @@ $(function(){ initResizable(false); });
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">earth.h File Reference</div></div>
+  <div class="headertitle"><div class="title">dumbastro.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Functions related to <a class="el" href="structEarth.html">Earth</a>'s properties.  
 <a href="#details">More...</a></p>
-
-<p><a href="earth_8h_source.html">Go to the source code of this file.</a></p>
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+</div>
+<p><a href="dumbastro_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDate.html">Date</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEarth.html">Earth</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLatitude.html">Latitude</a></td></tr>
@@ -114,6 +118,20 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a6584a6000b90e3494f97e00270337c59" id="r_a6584a6000b90e3494f97e00270337c59"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6584a6000b90e3494f97e00270337c59">jd</a> (struct <a class="el" href="structDate.html">Date</a> date)</td></tr>
+<tr class="separator:a6584a6000b90e3494f97e00270337c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a438ad7cf25dce921bd620da973a3dc71" id="r_a438ad7cf25dce921bd620da973a3dc71"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structDate.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a438ad7cf25dce921bd620da973a3dc71">date_from_jd</a> (double <a class="el" href="#a6584a6000b90e3494f97e00270337c59">jd</a>)</td></tr>
+<tr class="separator:a438ad7cf25dce921bd620da973a3dc71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1ea764620d2c7a1ceb9d1a1df4003ff" id="r_ad1ea764620d2c7a1ceb9d1a1df4003ff"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structDate.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1ea764620d2c7a1ceb9d1a1df4003ff">set_month_str</a> (struct <a class="el" href="structDate.html">Date</a> *date)</td></tr>
+<tr class="separator:ad1ea764620d2c7a1ceb9d1a1df4003ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b17dd4d86182a79d1587b9bd1dec1d" id="r_a21b17dd4d86182a79d1587b9bd1dec1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21b17dd4d86182a79d1587b9bd1dec1d">date_diff</a> (struct <a class="el" href="structDate.html">Date</a> first, struct <a class="el" href="structDate.html">Date</a> second)</td></tr>
+<tr class="separator:a21b17dd4d86182a79d1587b9bd1dec1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd0f2eb8a0f614544800ce665f0cb55" id="r_abcd0f2eb8a0f614544800ce665f0cb55"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcd0f2eb8a0f614544800ce665f0cb55">get_week_day</a> (struct <a class="el" href="structDate.html">Date</a> date)</td></tr>
+<tr class="separator:abcd0f2eb8a0f614544800ce665f0cb55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64265bfa50ceff75a485444abd2cbadf" id="r_a64265bfa50ceff75a485444abd2cbadf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64265bfa50ceff75a485444abd2cbadf">is_leap_year</a> (short year)</td></tr>
+<tr class="separator:a64265bfa50ceff75a485444abd2cbadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58b03a44bb614bf94110dfbdc2cfb2f8" id="r_a58b03a44bb614bf94110dfbdc2cfb2f8"><td class="memItemLeft" align="right" valign="top">short unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58b03a44bb614bf94110dfbdc2cfb2f8">get_year_day</a> (struct <a class="el" href="structDate.html">Date</a> date)</td></tr>
+<tr class="separator:a58b03a44bb614bf94110dfbdc2cfb2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb827a0a334f36fa3f6390c351a2c19f" id="r_acb827a0a334f36fa3f6390c351a2c19f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb827a0a334f36fa3f6390c351a2c19f">set_earth_values</a> (struct <a class="el" href="structEarth.html">Earth</a> *earth)</td></tr>
 <tr class="separator:acb827a0a334f36fa3f6390c351a2c19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35ab1255e12aebcce5c1d47330fed685" id="r_a35ab1255e12aebcce5c1d47330fed685"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35ab1255e12aebcce5c1d47330fed685">lat_to_dec</a> (struct <a class="el" href="structLatitude.html">Latitude</a> lat)</td></tr>
@@ -134,9 +152,11 @@ struct <a class="el" href="structLatitude.html">Latitude</a>&#160;</td><td class
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a952eac791b596a61bba0a133a3bb439f" id="r_a952eac791b596a61bba0a133a3bb439f"><td class="memItemLeft" align="right" valign="top"><a id="a952eac791b596a61bba0a133a3bb439f" name="a952eac791b596a61bba0a133a3bb439f"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>PI</b> = 3.14159265365358979323</td></tr>
-<tr class="separator:a952eac791b596a61bba0a133a3bb439f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a576a50bb619d9b7350132d8ef0131fc9" id="r_a576a50bb619d9b7350132d8ef0131fc9"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a576a50bb619d9b7350132d8ef0131fc9">RAD</a> = M_PI / 180.</td></tr>
+<tr class="separator:a576a50bb619d9b7350132d8ef0131fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec79d91d52bd254e0645659ebed8b77e" id="r_aec79d91d52bd254e0645659ebed8b77e"><td class="memItemLeft" align="right" valign="top"><a id="aec79d91d52bd254e0645659ebed8b77e" name="aec79d91d52bd254e0645659ebed8b77e"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>DEG</b> = 180. / M_PI</td></tr>
+<tr class="separator:aec79d91d52bd254e0645659ebed8b77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afee78fd4b66ed8f7169a5055f751abc0" id="r_afee78fd4b66ed8f7169a5055f751abc0"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afee78fd4b66ed8f7169a5055f751abc0">EQ_RADIUS</a> = 6378.14</td></tr>
 <tr class="separator:afee78fd4b66ed8f7169a5055f751abc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f89c8d5d36df36e7092bbbf1468c59b" id="r_a7f89c8d5d36df36e7092bbbf1468c59b"><td class="memItemLeft" align="right" valign="top"><a id="a7f89c8d5d36df36e7092bbbf1468c59b" name="a7f89c8d5d36df36e7092bbbf1468c59b"></a>
@@ -184,6 +204,58 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>MERID_ECC</b>
 
 </div>
 </div>
+<a id="a21b17dd4d86182a79d1587b9bd1dec1d" name="a21b17dd4d86182a79d1587b9bd1dec1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21b17dd4d86182a79d1587b9bd1dec1d">&#9670;&#160;</a></span>date_diff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int date_diff </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structDate.html">Date</a></td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structDate.html">Date</a></td>          <td class="paramname"><span class="paramname"><em>second</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the date difference in days </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>The first <a class="el" href="structDate.html">Date</a> (smaller) </td></tr>
+    <tr><td class="paramname">second</td><td>The second <a class="el" href="structDate.html">Date</a> (larger) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a438ad7cf25dce921bd620da973a3dc71" name="a438ad7cf25dce921bd620da973a3dc71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a438ad7cf25dce921bd620da973a3dc71">&#9670;&#160;</a></span>date_from_jd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structDate.html">Date</a> date_from_jd </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>jd</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculates calendar date from Julian Day <br  />
+ <em><b>NOTE</b></em>: not valid for negative JD values </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jd</td><td>The Julian Day to be converted to <a class="el" href="structDate.html">Date</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6280d486224b18ce771f144896e035e2" name="a6280d486224b18ce771f144896e035e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6280d486224b18ce771f144896e035e2">&#9670;&#160;</a></span>distance()</h2>
 
@@ -209,6 +281,99 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>MERID_ECC</b>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="abcd0f2eb8a0f614544800ce665f0cb55" name="abcd0f2eb8a0f614544800ce665f0cb55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd0f2eb8a0f614544800ce665f0cb55">&#9670;&#160;</a></span>get_week_day()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short get_week_day </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structDate.html">Date</a></td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the week day as a number </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>The <a class="el" href="structDate.html">Date</a> struct to find the week day from </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a58b03a44bb614bf94110dfbdc2cfb2f8" name="a58b03a44bb614bf94110dfbdc2cfb2f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58b03a44bb614bf94110dfbdc2cfb2f8">&#9670;&#160;</a></span>get_year_day()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short unsigned get_year_day </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structDate.html">Date</a></td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the day number in the given year </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>The <a class="el" href="structDate.html">Date</a> struct to use </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a64265bfa50ceff75a485444abd2cbadf" name="a64265bfa50ceff75a485444abd2cbadf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64265bfa50ceff75a485444abd2cbadf">&#9670;&#160;</a></span>is_leap_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_leap_year </td>
+          <td>(</td>
+          <td class="paramtype">short</td>          <td class="paramname"><span class="paramname"><em>year</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks whether a given year is a leap year (Gregorian only!!) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>The year to check </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6584a6000b90e3494f97e00270337c59" name="a6584a6000b90e3494f97e00270337c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6584a6000b90e3494f97e00270337c59">&#9670;&#160;</a></span>jd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double jd </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structDate.html">Date</a></td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculates Julian Day from calendar date </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>The <a class="el" href="structDate.html">Date</a> struct to convert to JD </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The Julian Day </dd></dl>
 
 </div>
 </div>
@@ -335,6 +500,30 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>MERID_ECC</b>
 
 </div>
 </div>
+<a id="ad1ea764620d2c7a1ceb9d1a1df4003ff" name="ad1ea764620d2c7a1ceb9d1a1df4003ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1ea764620d2c7a1ceb9d1a1df4003ff">&#9670;&#160;</a></span>set_month_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structDate.html">Date</a> set_month_str </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structDate.html">Date</a> *</td>          <td class="paramname"><span class="paramname"><em>date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo</a></b></dt><dd>Replace with LUT Sets the English name for the month in a <a class="el" href="structDate.html">Date</a> struct </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">The</td><td><a class="el" href="structDate.html">Date</a> struct where the month string should be set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="afee78fd4b66ed8f7169a5055f751abc0" name="afee78fd4b66ed8f7169a5055f751abc0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afee78fd4b66ed8f7169a5055f751abc0">&#9670;&#160;</a></span>EQ_RADIUS</h2>
@@ -347,7 +536,22 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>MERID_ECC</b>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="structEarth.html">Earth</a> constants... </p>
+<p><a class="el" href="structEarth.html">Earth</a> constants </p>
+
+</div>
+</div>
+<a id="a576a50bb619d9b7350132d8ef0131fc9" name="a576a50bb619d9b7350132d8ef0131fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a576a50bb619d9b7350132d8ef0131fc9">&#9670;&#160;</a></span>RAD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double RAD = M_PI / 180.</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Conversions </p>
 
 </div>
 </div>

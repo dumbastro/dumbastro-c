@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['month_0',['month',['../structDate.html#a7aea949895b5673dcc17ae0160944b1c',1,'Date']]],
-  ['monthstr_1',['monthstr',['../structDate.html#a303f466a20da89a4888d71ff89ee9b63',1,'Date']]]
+  ['r_5fcos_5fphi_5fp_0',['r_cos_phi_p',['../structLocation.html#a8c33ed99a783d0cc4c9518c5b1710d84',1,'Location']]],
+  ['r_5fsin_5fphi_5fp_1',['r_sin_phi_p',['../structLocation.html#a178cc5be45366efa4918468594a92eaf',1,'Location']]],
+  ['rho_5fcos_5fphi_2',['rho_cos_phi',['../earth_8c.html#a02fd807c0725fa720ce87727d0e477a3',1,'earth.c']]],
+  ['rho_5fsin_5fphi_3',['rho_sin_phi',['../earth_8c.html#a70fe7812c7172d45168d8f3bb8a84a67',1,'earth.c']]]
 ];

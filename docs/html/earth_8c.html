@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dumbastro C: src/earth.h File Reference</title>
+<title>Dumbastro C: src/earth.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,68 +89,34 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">earth.h File Reference</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">earth.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Functions related to <a class="el" href="structEarth.html">Earth</a>'s properties.  
 <a href="#details">More...</a></p>
-
-<p><a href="earth_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEarth.html">Earth</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLatitude.html">Latitude</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLongitude.html">Longitude</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLocation.html">Location</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;dumbastro.h&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:acb827a0a334f36fa3f6390c351a2c19f" id="r_acb827a0a334f36fa3f6390c351a2c19f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb827a0a334f36fa3f6390c351a2c19f">set_earth_values</a> (struct <a class="el" href="structEarth.html">Earth</a> *earth)</td></tr>
 <tr class="separator:acb827a0a334f36fa3f6390c351a2c19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35ab1255e12aebcce5c1d47330fed685" id="r_a35ab1255e12aebcce5c1d47330fed685"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35ab1255e12aebcce5c1d47330fed685">lat_to_dec</a> (struct <a class="el" href="structLatitude.html">Latitude</a> lat)</td></tr>
 <tr class="separator:a35ab1255e12aebcce5c1d47330fed685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae482f8ce962ab275c2ced4d60f2f6b17" id="r_ae482f8ce962ab275c2ced4d60f2f6b17"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae482f8ce962ab275c2ced4d60f2f6b17">lon_to_dec</a> (struct <a class="el" href="structLongitude.html">Longitude</a> lon)</td></tr>
+<tr class="separator:ae482f8ce962ab275c2ced4d60f2f6b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70fe7812c7172d45168d8f3bb8a84a67" id="r_a70fe7812c7172d45168d8f3bb8a84a67"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70fe7812c7172d45168d8f3bb8a84a67">rho_sin_phi</a> (double h, double decimal_lat)</td></tr>
 <tr class="separator:a70fe7812c7172d45168d8f3bb8a84a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02fd807c0725fa720ce87727d0e477a3" id="r_a02fd807c0725fa720ce87727d0e477a3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02fd807c0725fa720ce87727d0e477a3">rho_cos_phi</a> (double h, double decimal_lat)</td></tr>
 <tr class="separator:a02fd807c0725fa720ce87727d0e477a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8305eb3abbcbb1576b0a384cb0ed1777" id="r_a8305eb3abbcbb1576b0a384cb0ed1777"><td class="memItemLeft" align="right" valign="top"><a id="a8305eb3abbcbb1576b0a384cb0ed1777" name="a8305eb3abbcbb1576b0a384cb0ed1777"></a>
-struct <a class="el" href="structLatitude.html">Latitude</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dec_to_lat</b> (double dec_lat)</td></tr>
-<tr class="separator:a8305eb3abbcbb1576b0a384cb0ed1777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5ae7c465fcbd1f0e983d41be231c75d" id="r_aa5ae7c465fcbd1f0e983d41be231c75d"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structLocation.html">Location</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5ae7c465fcbd1f0e983d41be231c75d">set_location_params</a> (struct <a class="el" href="structLocation.html">Location</a> *loc)</td></tr>
 <tr class="separator:aa5ae7c465fcbd1f0e983d41be231c75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6280d486224b18ce771f144896e035e2" id="r_a6280d486224b18ce771f144896e035e2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6280d486224b18ce771f144896e035e2">distance</a> (struct <a class="el" href="structLocation.html">Location</a> *loc1, struct <a class="el" href="structLocation.html">Location</a> *loc2)</td></tr>
 <tr class="separator:a6280d486224b18ce771f144896e035e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab49e7e50d74a44980678c669f093e898" id="r_ab49e7e50d74a44980678c669f093e898"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab49e7e50d74a44980678c669f093e898">better_distance</a> (struct <a class="el" href="structLocation.html">Location</a> *loc1, struct <a class="el" href="structLocation.html">Location</a> *loc2)</td></tr>
 <tr class="separator:ab49e7e50d74a44980678c669f093e898"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a952eac791b596a61bba0a133a3bb439f" id="r_a952eac791b596a61bba0a133a3bb439f"><td class="memItemLeft" align="right" valign="top"><a id="a952eac791b596a61bba0a133a3bb439f" name="a952eac791b596a61bba0a133a3bb439f"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>PI</b> = 3.14159265365358979323</td></tr>
-<tr class="separator:a952eac791b596a61bba0a133a3bb439f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afee78fd4b66ed8f7169a5055f751abc0" id="r_afee78fd4b66ed8f7169a5055f751abc0"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afee78fd4b66ed8f7169a5055f751abc0">EQ_RADIUS</a> = 6378.14</td></tr>
-<tr class="separator:afee78fd4b66ed8f7169a5055f751abc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f89c8d5d36df36e7092bbbf1468c59b" id="r_a7f89c8d5d36df36e7092bbbf1468c59b"><td class="memItemLeft" align="right" valign="top"><a id="a7f89c8d5d36df36e7092bbbf1468c59b" name="a7f89c8d5d36df36e7092bbbf1468c59b"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>FLATTENING</b> = 1.0 / 298.257</td></tr>
-<tr class="separator:a7f89c8d5d36df36e7092bbbf1468c59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b87c9ed22b868521e2c2cec8fb2adb8" id="r_a6b87c9ed22b868521e2c2cec8fb2adb8"><td class="memItemLeft" align="right" valign="top"><a id="a6b87c9ed22b868521e2c2cec8fb2adb8" name="a6b87c9ed22b868521e2c2cec8fb2adb8"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>POL_RADIUS</b> = 6356.755</td></tr>
-<tr class="separator:a6b87c9ed22b868521e2c2cec8fb2adb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ba2678df95c7d8ab208d37320b0740a" id="r_a7ba2678df95c7d8ab208d37320b0740a"><td class="memItemLeft" align="right" valign="top"><a id="a7ba2678df95c7d8ab208d37320b0740a" name="a7ba2678df95c7d8ab208d37320b0740a"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>RAD_RATIO</b> = 1 - FLATTENING</td></tr>
-<tr class="separator:a7ba2678df95c7d8ab208d37320b0740a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecc59bc25a075223391a10bdd5131513" id="r_aecc59bc25a075223391a10bdd5131513"><td class="memItemLeft" align="right" valign="top"><a id="aecc59bc25a075223391a10bdd5131513" name="aecc59bc25a075223391a10bdd5131513"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>MERID_ECC</b> = 0.08181922</td></tr>
-<tr class="separator:aecc59bc25a075223391a10bdd5131513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Functions related to <a class="el" href="structEarth.html">Earth</a>'s properties. </p>
@@ -233,6 +199,30 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>MERID_ECC</b>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The converted <a class="el" href="structLatitude.html">Latitude</a> number </dd></dl>
+
+</div>
+</div>
+<a id="ae482f8ce962ab275c2ced4d60f2f6b17" name="ae482f8ce962ab275c2ced4d60f2f6b17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae482f8ce962ab275c2ced4d60f2f6b17">&#9670;&#160;</a></span>lon_to_dec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lon_to_dec </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structLongitude.html">Longitude</a></td>          <td class="paramname"><span class="paramname"><em>lon</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert <a class="el" href="structLongitude.html">Longitude</a> to decimal degrees </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lon</td><td>The <a class="el" href="structLongitude.html">Longitude</a> struct (sessagesimal) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The converted <a class="el" href="structLongitude.html">Longitude</a> number </dd></dl>
 
 </div>
 </div>
@@ -332,22 +322,6 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><b>MERID_ECC</b>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="afee78fd4b66ed8f7169a5055f751abc0" name="afee78fd4b66ed8f7169a5055f751abc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afee78fd4b66ed8f7169a5055f751abc0">&#9670;&#160;</a></span>EQ_RADIUS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double EQ_RADIUS = 6378.14</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="structEarth.html">Earth</a> constants... </p>
 
 </div>
 </div>

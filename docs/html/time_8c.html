@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dumbastro C: Latitude Struct Reference</title>
+<title>Dumbastro C: src/time.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,78 +81,54 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structLatitude-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Latitude Struct Reference</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">time.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="dumbastro_8h_source.html">dumbastro.h</a>&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a3dc67d3674c109e918707d934dbcca94" id="r_a3dc67d3674c109e918707d934dbcca94"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dc67d3674c109e918707d934dbcca94">degrees</a></td></tr>
-<tr class="separator:a3dc67d3674c109e918707d934dbcca94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9deb32cf90ed8e77d2d8e611abcbb020" id="r_a9deb32cf90ed8e77d2d8e611abcbb020"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9deb32cf90ed8e77d2d8e611abcbb020">arcmins</a></td></tr>
-<tr class="separator:a9deb32cf90ed8e77d2d8e611abcbb020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a233218140a9cf0e12844b387ce23de1a" id="r_a233218140a9cf0e12844b387ce23de1a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a233218140a9cf0e12844b387ce23de1a">arcsecs</a></td></tr>
-<tr class="separator:a233218140a9cf0e12844b387ce23de1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<p>Functions related to (astronomical) time.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;dumbastro.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2061ea3c3bdc3459993194a9e9815303" id="r_a2061ea3c3bdc3459993194a9e9815303"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2061ea3c3bdc3459993194a9e9815303">g_mean_ha</a> (struct <a class="el" href="structDate.html">Date</a> date, bool in_hours)</td></tr>
+<tr class="separator:a2061ea3c3bdc3459993194a9e9815303"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Representation of geographical latitude </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9deb32cf90ed8e77d2d8e611abcbb020" name="a9deb32cf90ed8e77d2d8e611abcbb020"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9deb32cf90ed8e77d2d8e611abcbb020">&#9670;&#160;</a></span>arcmins</h2>
+<div class="textblock"><p>Functions related to (astronomical) time. </p>
+<p>From "Astronomical Algorithms", Chapter 11 <em>Sidereal Time at Greenwich</em> and Chapters ... </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a2061ea3c3bdc3459993194a9e9815303" name="a2061ea3c3bdc3459993194a9e9815303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2061ea3c3bdc3459993194a9e9815303">&#9670;&#160;</a></span>g_mean_ha()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">short Latitude::arcmins</td>
+          <td class="memname">double g_mean_ha </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structDate.html">Date</a></td>          <td class="paramname"><span class="paramname"><em>date</em></span>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="structLatitude.html">Latitude</a> arc minutes as an integer </p>
-
-</div>
-</div>
-<a id="a233218140a9cf0e12844b387ce23de1a" name="a233218140a9cf0e12844b387ce23de1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a233218140a9cf0e12844b387ce23de1a">&#9670;&#160;</a></span>arcsecs</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">double Latitude::arcsecs</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>in_hours</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="structLatitude.html">Latitude</a> arc seconds as decimal </p>
+<p>Calculates the mean hour angle (sidereal time) at Greenwich using formula (11.4) </p><dl class="section return"><dt>Returns</dt><dd>The hour angle in degrees </dd></dl>
 
 </div>
 </div>
-<a id="a3dc67d3674c109e918707d934dbcca94" name="a3dc67d3674c109e918707d934dbcca94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dc67d3674c109e918707d934dbcca94">&#9670;&#160;</a></span>degrees</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">short Latitude::degrees</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="structLatitude.html">Latitude</a> degrees as an integer </p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/<a class="el" href="dumbastro_8h_source.html">dumbastro.h</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

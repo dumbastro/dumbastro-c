@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['get_5fweek_5fday_0',['get_week_day',['../julianday_8h.html#abcd0f2eb8a0f614544800ce665f0cb55',1,'julianday.c']]],
-  ['get_5fyear_5fday_1',['get_year_day',['../julianday_8h.html#a58b03a44bb614bf94110dfbdc2cfb2f8',1,'julianday.c']]]
+  ['delta_5ffrom_5fecl_0',['delta_from_ecl',['../coords_8c.html#a3fb1cdb47138eac82829fb0b3626c4dc',1,'coords.c']]],
+  ['distance_1',['distance',['../earth_8c.html#a6280d486224b18ce771f144896e035e2',1,'earth.c']]]
 ];

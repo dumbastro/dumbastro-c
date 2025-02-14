@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['better_5fdistance_0',['better_distance',['../earth_8h.html#ab49e7e50d74a44980678c669f093e898',1,'earth.c']]]
+  ['alpha_5ffrom_5fecl_0',['alpha_from_ecl',['../coords_8c.html#a72acca54143211fa5dbfd3a8e13ac9ab',1,'coords.c']]]
 ];
