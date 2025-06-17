@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "./src/dumbastro.h"
+#include <assert.h>
+#include "dumbastro.h"
 
 int main(void) {
     // Test earth.c functions
@@ -227,6 +228,17 @@ int main(void) {
    printf("Day of the year? (Should be 113): %d\n", get_year_day(day_test4));
    printf("Day of the year? (Should be 318): %d\n", get_year_day(day_test5));
    printf("Day of the year? (Should be 153): %d\n", get_year_day(day_test6));
+
+   assert(is_leap_year(2400) == 1);
+   assert(is_leap_year(1236) == 1);
+   assert(is_leap_year(2024) == 1);
+   assert(is_leap_year(900) == 0);
+   assert(is_leap_year(1700) == 0);
+   assert(is_leap_year(1800) == 0);
+   assert(is_leap_year(1900) == 0);
+   assert(is_leap_year(750) == 0);
+   assert(is_leap_year(1429) == 0);
+
 
     // Test mean sideral time at Greenwich
     struct Date gw_date = {

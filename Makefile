@@ -1,23 +1,25 @@
 CC=gcc
 CFLAGS=-Wall -pedantic
+INCLUDE=-Iinclude
 DEBUG=-g
 LIBS=-lm
 SRC=${PWD}/src
 TEST_DIR=${PWD}/tests
-BINS = libdumbastro.so testdumbastro
+BIN_DIR = $(PWD)/bin
+BINS = $(BIN_DIR)/testdumbastro $(BIN_DIR)/libdumbastro.so
 
 SOURCES = $(wildcard ${SRC}/*.c)
 
 all: $(BINS)
 
 # -fPIC: Position-Independent Code
-libdumbastro.so: src/*.c src/dumbastro.h
-	$(CC) $(CFLAGS) $(DEBUG) -fPIC -shared -o $@ $(SOURCES) $(LIBS)
+$(BIN_DIR)/libdumbastro.so: $(SOURCES) $(PWD)/include/dumbastro.h
+	$(CC) $(CFLAGS) $(DEBUG) $(INCLUDE) -fPIC -shared -o $@ $(SOURCES) $(LIBS)
 
-testdumbastro: testdumbastro.c
-	$(CC) $(WARN) $(DEBUG) -o testdumbastro testdumbastro.c $(LIBS) -L. -ldumbastro
+$(BIN_DIR)/testdumbastro: $(TEST_DIR)/testdumbastro.c
+	$(CC) $(CFLAGS) $(DEBUG) $(INCLUDE) -o $(PWD)/bin/testdumbastro $(TEST_DIR)/testdumbastro.c $(LIBS) -L. -ldumbastro
 
-clean:
+.PHONY clean:
 	rm $(BINS)
 
 # vim:noexpandtab list

@@ -131,3 +131,4 @@ double delta_from_ecl(double lat, double lon, Equinox eq) {
 
     return asin(sin_delta) * DEG;
 }
+

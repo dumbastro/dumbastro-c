@@ -32,12 +32,12 @@ double jd(struct Date date) {
     double day = date.day;
 
     if (month == 1 || month == 2) {
-	year = year - 1;
-	month = month + 12;
+        year = year - 1;
+        month = month + 12;
     }
 
-    int a = trunc(year / 100.0);
-    int b = 2 - a + trunc(a / 4.0);
+    int a = floor(year / 100.0);
+    int b = 2 - a + floor(a / 4.0);
 
     // Should compare the date to
     // Gregorian reform...
@@ -48,9 +48,9 @@ double jd(struct Date date) {
 
     if (is_jul_date) { b = 0; }
 
-    double jd = trunc(365.2500 * (year + 4716));
+    double jd = floor(365.2500 * (year + 4716));
 
-    jd += trunc(30.6001 * (month + 1)) + day + b - 1524.5000;
+    jd += floor(30.6001 * (month + 1)) + day + b - 1524.5000;
 
     return jd;
 }
@@ -61,22 +61,22 @@ double jd(struct Date date) {
  * @param jd The Julian Day to be converted to Date
 */
 struct Date date_from_jd(double jd) {
-    int z = trunc(jd + 0.5);
+    int z = floor(jd + 0.5);
     double f = jd + 0.5 - z;
     int a = 0, b = 0, c = 0, d = 0, e = 0;
 
     if (z < 2299161) a = z;
     if (z == 2299161 || z > 2299161) {
-		int alpha = trunc((z - 1867216.25) / 36524.25);
-		a = z + 1 + alpha - trunc(alpha / 4.);
+		int alpha = floor((z - 1867216.25) / 36524.25);
+		a = z + 1 + alpha - floor(alpha / 4.);
     }
 
     b = a + 1524;
-    c = trunc((b - 122.1) / 365.25);
-    d = trunc(365.25 * c);
-    e = trunc((b - d) / 30.6001);
+    c = floor((b - 122.1) / 365.25);
+    d = floor(365.25 * c);
+    e = floor((b - d) / 30.6001);
 
-    double day = b - d - trunc(30.6001 * e) + f;
+    double day = b - d - floor(30.6001 * e) + f;
     short month; 
     short year;
     
@@ -120,18 +120,18 @@ int date_diff(struct Date first, struct Date second) {
 */
 short get_week_day(struct Date date) {
    // Day should be taken at Oh
-   //date.day = trunc(date.day) + 0.0;
+   //date.day = floor(date.day) + 0.0;
    double altered_jd = jd(date) + 1.5; 
 
    return (int)altered_jd % 7;
 }
 /**
 * Checks whether a given year is
-* a leap year (Gregorian only!!)
+* a leap year
 * @param year The year to check
 */
 bool is_leap_year(short year) {
-    return (year % 4) == 0;
+    return year % 100 == 0 ? year % 400 == 0 : year % 4 == 0;
 }
 /**
 * Returns the day number in the given year
@@ -140,9 +140,9 @@ bool is_leap_year(short year) {
 short unsigned get_year_day(struct Date date) {
     short k = is_leap_year(date.year) ? 1 : 2;
 
-    return trunc((275 * date.month) / 9.)
-        - k * trunc((date.month + 9) / 12.)
-        + trunc(date.day) - 30;
+    return floor((275 * date.month) / 9.)
+        - k * floor((date.month + 9) / 12.)
+        + floor(date.day) - 30;
 }
 
 
